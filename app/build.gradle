@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.df.dianping"
+        minSdkVersion 14
+        targetSdkVersion 14
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('ApiStoreSDK1.0.4.jar')
+    compile files('AMap_Location_V2.4.0_20160308.jar')
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.eftimoff:android-pathview:1.0.8@aar'
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PathView"><attr format="color|reference" name="pathColor"/><attr format="dimension|reference" name="pathWidth"/><attr format="reference" name="svg"/></declare-styleable>
+</resources>
