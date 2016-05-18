@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <scale android:duration="@android:integer/config_mediumAnimTime" android:pivotX="50.0%" android:pivotY="50.0%" android:fromXScale="1.0" android:toXScale="1.5" android:fromYScale="1.0" android:toYScale="1.5" />
     <alpha android:duration="@android:integer/config_mediumAnimTime" android:fromAlpha="1.0" android:toAlpha="0.4" />
-</set><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/anim/main_exit.xml -->
+</set><!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/anim/main_exit.xml -->

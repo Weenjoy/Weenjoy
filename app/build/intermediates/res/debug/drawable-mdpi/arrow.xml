@@ -6,4 +6,4 @@
     <item android:state_focused="true" android:drawable="@drawable/arrow_pressed" />
     <item android:state_selected="true" android:drawable="@drawable/arrow_pressed" />
     <item android:drawable="@drawable/arrow_normal" />
-</selector><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/drawable-mdpi/arrow.xml -->
+</selector><!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/drawable-mdpi/arrow.xml -->

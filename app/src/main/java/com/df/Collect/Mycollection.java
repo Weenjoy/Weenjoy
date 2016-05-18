@@ -62,7 +62,7 @@ public class Mycollection extends Activity {
         list = (ListView) findViewById(R.id.collect_list);
         loadinglayout = (LinearLayout) findViewById(R.id.collect_loadinglayout);
         help = new DataBaseHelp(this);
-        table = new OperateTable(help.getWritableDatabase());
+        table = new OperateTable(help.getWritableDatabase(),1);
         datalist = new ArrayList<>();
         adapter = new ShopListAdapter(this, datalist);
         list.setAdapter(adapter);
@@ -90,7 +90,7 @@ public class Mycollection extends Activity {
                                 String id = datalist.get(position).get("shop_id").toString();
                                 Log.i("info",id+"");
                                 datalist.remove(position);
-                                table = new OperateTable(help.getWritableDatabase());
+                                table = new OperateTable(help.getWritableDatabase(),1);
                                 table.delete(id);
                                 adapter.setList(datalist);
                             }

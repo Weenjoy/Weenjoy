@@ -14,6 +14,7 @@
     <color name="viewfinder_laser">#ffff0000</color>
     <color name="viewfinder_mask">#60000000</color>
     <color name="red">#ffff0000</color>
+    <color name="orange">#FF7F00</color>
     <color name="blue">#ff3590c4</color>
     <color name="green">#7700ff00</color>
     <color name="yellow">#ffff7000</color>

@@ -6,4 +6,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/btn_weight_press" />
     <item android:state_focused="true" android:drawable="@drawable/btn_weight_press" />
     <item android:drawable="@drawable/btn_weight_normal" />
-</selector><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/drawable-mdpi/btn_weight.xml -->
+</selector><!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/drawable-mdpi/btn_weight.xml -->

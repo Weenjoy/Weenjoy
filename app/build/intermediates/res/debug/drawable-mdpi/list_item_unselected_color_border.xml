@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient android:startColor="#fff8f8f8" android:endColor="#fff1f1f1" android:angle="270.0" />
     <stroke android:width="1.0px" android:color="#ffdadada" />
-</shape><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/drawable-mdpi/list_item_unselected_color_border.xml -->
+</shape><!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/drawable-mdpi/list_item_unselected_color_border.xml -->
