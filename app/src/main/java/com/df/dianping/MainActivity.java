@@ -32,6 +32,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.df.Collect.Mycollection;
 import com.df.GetDataFromNet.Getdata;
 import com.df.GetDataFromNet.MyApplication;
+import com.df.Indent.MyIndentActivity;
 import com.df.Search.Search;
 import com.df.Search.Search_history;
 
@@ -230,6 +231,8 @@ public class MainActivity extends Activity {
                 case 4:
                     break;
                 case 5:
+                    Intent intent5 = new Intent(MainActivity.this, MyIndentActivity.class);
+                    startActivity(intent5);
                     break;
                 case 6:
                     Intent intent6 = new Intent(MainActivity.this, Mycollection.class);
@@ -313,7 +316,7 @@ public class MainActivity extends Activity {
                 }
 
                 case 5: {
-                    text.setText("排行榜");
+                    text.setText("我的订单");
                     Drawable draw = getResources().getDrawable(R.drawable.home_button_rank);
                     draw.setBounds(0, 0, draw.getIntrinsicWidth(), draw.getIntrinsicHeight());
                     text.setCompoundDrawables(null, draw, null, null);
