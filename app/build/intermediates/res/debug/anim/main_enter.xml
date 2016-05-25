@@ -14,4 +14,4 @@
         android:duration="@android:integer/config_mediumAnimTime"
         android:fromAlpha="0.6"
         android:toAlpha="1.0" />
-</set><!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/anim/main_enter.xml -->
+</set><!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/anim/main_enter.xml -->

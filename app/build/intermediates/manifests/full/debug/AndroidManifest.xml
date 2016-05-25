@@ -81,6 +81,18 @@
         <activity
             android:name="com.df.Indent.MyIndentActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.df.Login.LoginActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.df.Login.RegisterActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.df.Login.PhoneLoginActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.df.Login.ResetPasswordActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
     </application>
 
 </manifest>

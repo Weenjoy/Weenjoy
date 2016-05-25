@@ -2,53 +2,25 @@
 <items version="2" >
 
     <item
-        jar="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\AMap_Location_V2.4.0_20160308.jar"
+        jar="F:\Android\Projects\Weenjoy-master\app\libs\BmobSDK_V3.4.6_0415.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="dd8aedb3d0d87b92777ab997ec883427d88f379a">
-        <dex dex="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\pre-dexed\debug\AMap_Location_V2.4.0_20160308-72b1406c2180a744ef6a4dbb4a89b7b91d67e0a0.jar" />
+        sha1="41f54bb2846705eea0de5df48ddbcba378bd54e5">
+        <dex dex="F:\Android\Projects\Weenjoy-master\app\build\intermediates\pre-dexed\debug\BmobSDK_V3.4.6_0415-2631ec0570cb2ab2aa4f66f85a2be2ff396fc9e2.jar" />
     </item>
     <item
-        jar="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jar="F:\Android\Projects\Weenjoy-master\app\libs\okhttp-2.4.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-30f66c52c65d6afbf00f2098c3631c9b8a596b48.jar" />
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="F:\Android\Projects\Weenjoy-master\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0-6013545fd399f88ac11ebb326538e4b22b9c0937.jar" />
     </item>
     <item
-        jar="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\exploded-aar\com.eftimoff\android-pathview\1.0.8\jars\classes.jar"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="88c68c6a96cb202c8974833c319dc4a340f29b7e">
-        <dex dex="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\pre-dexed\debug\classes-d13818171aabf0fad5dc131f501710d3d081969f.jar" />
-    </item>
-    <item
-        jar="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\ApiStoreSDK1.0.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="9afb5799c44dbae661e6ed1dd0ea71586ac2683f">
-        <dex dex="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\pre-dexed\debug\ApiStoreSDK1.0.4-93ceab609836406fed83d252b7022ba504929122.jar" />
-    </item>
-    <item
-        jar="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\pre-dexed\debug\classes-0ad06be4be87d0ef697c4d4e825bd875504ad458.jar" />
-    </item>
-    <item
-        jar="D:\android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-e6e8a34c2a4d04eb85bab03acb1b4266a8db0f15.jar" />
-    </item>
-    <item
-        jar="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\exploded-aar\com.eftimoff\android-pathview\1.0.8\jars\libs\androidsvg-1.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d0cb3453e18fffeb053e9b7f052af3dcec9f75b4">
-        <dex dex="D:\俊\安卓开发\项目开发\Weenjoy-master\Weenjoy-master\app\build\intermediates\pre-dexed\debug\androidsvg-1.2.1-45772b662da8bacc54a82028b068f5b57892a738.jar" />
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="F:\Android\Projects\Weenjoy-master\app\build\intermediates\pre-dexed\debug\okio-1.4.0-a05532bc788a554b357d24e9f35162ad99c67f00.jar" />
     </item>
 
 </items>

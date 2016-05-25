@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="base_center_color_pressed">#ffff8c2f</color>
     <color name="base_end_color_default">#ffffffff</color>
@@ -48,14 +48,14 @@
     <color name="white_background">#00ffffff</color>
     <color name="yellow">#ffff7000</color>
     <declare-styleable name="PathView"><attr format="color|reference" name="pathColor"/><attr format="dimension|reference" name="pathWidth"/><attr format="reference" name="svg"/></declare-styleable>
-    <!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="arrow_offset">5.0dip</dimen>
     <dimen name="box_height">70.0dip</dimen>
     <dimen name="single_box_width">100.0dip</dimen>
-    <!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="app_name">Dianping</string>
@@ -65,7 +65,7 @@
     <string name="title_activity_search">Search</string>
     <string name="title_activity_search_history">Search_history</string>
     <string name="title_activity_web_view">WebView</string>
-    <!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/Weenjoy-master/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="CustomChannelItem">
         <item name="android:background">@drawable/channel_bar</item>

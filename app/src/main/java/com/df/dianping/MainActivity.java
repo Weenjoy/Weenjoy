@@ -33,6 +33,7 @@ import com.df.Collect.Mycollection;
 import com.df.GetDataFromNet.Getdata;
 import com.df.GetDataFromNet.MyApplication;
 import com.df.Indent.MyIndentActivity;
+import com.df.Login.LoginActivity;
 import com.df.Search.Search;
 import com.df.Search.Search_history;
 
@@ -40,6 +41,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import cn.bmob.v3.Bmob;
 
 import static com.df.dianping.R.id.main_search_btn;
 
@@ -79,9 +82,13 @@ public class MainActivity extends Activity {
         }
     };
 
+    private static final String BmobAppID= "2cdc69b8257c5b4f65cc5b241a5a3e73";
+
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        Bmob.initialize(MainActivity.this,BmobAppID);
         view = this.getLayoutInflater().inflate(R.layout.main, null);
         setContentView(view);
         button = (Button) findViewById(main_search_btn);
@@ -224,7 +231,8 @@ public class MainActivity extends Activity {
                     intent1.putExtra("keyword", "");
                     startActivity(intent1);
                     break;
-                case 2:
+                case 2:                    Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent2);
                     break;
                 case 3:
                     break;
