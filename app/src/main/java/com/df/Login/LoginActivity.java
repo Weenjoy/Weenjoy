@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.df.User.MyUser;
+import com.df.dianping.MainpersonalActivity;
 import com.df.dianping.R;
 
 import cn.bmob.v3.BmobUser;
@@ -38,6 +40,10 @@ public class LoginActivity extends BaseActivity {
         tv_fast_login=(TextView)findViewById(R.id.tv_fast_login);
         tv_return=(TextView)findViewById(R.id.tv_return);
 
+        Intent i=super.getIntent();
+        et_accout.setText(i.getStringExtra("num"));
+        et_password.setText(i.getStringExtra("pass"));
+
 
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,14 +73,19 @@ public class LoginActivity extends BaseActivity {
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BmobUser.loginByAccount(LoginActivity.this, et_accout.getText().toString(), et_password.getText().toString(), new LogInListener<BmobUser>() {
+                BmobUser.loginByAccount(LoginActivity.this, et_accout.getText().toString(), et_password.getText().toString(), new LogInListener<MyUser>() {
 
                     @Override
-                    public void done(BmobUser user, BmobException e) {
+                    public void done(MyUser user, BmobException e) {
                         // TODO Auto-generated method stub15
                         if (user != null) {
                             showLog("用户登陆成功");
                             showToast("用户登录成功");
+                            Intent intent=new Intent(LoginActivity.this, MainpersonalActivity.class);
+                            String info=et_accout.getText().toString();
+                            intent.putExtra("account",info);
+                            startActivity(intent);
+                            finish();
                         }
                     }
                 });

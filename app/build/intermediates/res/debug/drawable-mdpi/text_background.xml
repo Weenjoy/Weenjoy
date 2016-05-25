@@ -4,4 +4,4 @@
     <gradient android:startColor="#ffe5e5e5" android:endColor="#fffafafa" android:angle="270.0" />
     <padding android:left="6.0dip" android:top="2.0dip" android:right="6.0dip" android:bottom="2.0dip" />
     <stroke android:width="1.0px" android:color="#ffdadada" />
-</shape><!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/drawable-mdpi/text_background.xml -->
+</shape><!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/drawable-mdpi/text_background.xml -->

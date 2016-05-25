@@ -1,6 +1,7 @@
 package com.df.Login;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -26,18 +27,24 @@ public class RegisterActivity extends ResetPasswordActivity {
                     showToast("密码不一致");
                     return;
                 }
-                BmobUser user = new MyUser();
+                MyUser user = new MyUser();
                 user.setMobilePhoneNumber(et_num.getText().toString());//设置手机号码（必填）
 
                 user.setPassword(et_re_password.getText().toString());                  //设置用户密码
 
-                user.signOrLogin(RegisterActivity.this,et_check.getText().toString(), new SaveListener() {
+                user.signOrLogin(RegisterActivity.this, et_check.getText().toString(), new SaveListener() {
 
                     @Override
                     public void onSuccess() {
                         // TODO Auto-generated method stub
                         toast("注册或登录成功");
-
+                        Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
+                        String info=et_num.getText().toString();
+                        intent.putExtra("num",info);
+                        String info1=et_re_password.getText().toString();
+                        intent.putExtra("pass",info1);
+                        startActivity(intent);
+                        finish();
                     }
 
                     @Override

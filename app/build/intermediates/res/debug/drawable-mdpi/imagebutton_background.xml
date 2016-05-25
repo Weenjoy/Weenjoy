@@ -4,4 +4,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/image_button_pressed" />
     <item android:state_focused="true" android:drawable="@drawable/image_button_pressed" />
     <item android:drawable="@android:color/transparent" />
-</selector><!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/drawable-mdpi/imagebutton_background.xml -->
+</selector><!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/drawable-mdpi/imagebutton_background.xml -->

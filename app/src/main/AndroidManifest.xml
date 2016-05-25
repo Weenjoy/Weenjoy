@@ -93,6 +93,14 @@
 
             android:theme="@android:style/Theme.Light.NoTitleBar" />
 
+        <activity
+            android:name=".MainpersonalActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.df.Circle.UploadActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+
     </application>
 
 </manifest>

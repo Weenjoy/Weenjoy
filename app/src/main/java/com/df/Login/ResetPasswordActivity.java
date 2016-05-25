@@ -1,5 +1,6 @@
 package com.df.Login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -88,6 +89,13 @@ public class ResetPasswordActivity extends BaseActivity {
                         if(ex==null){
                             showLog("密码重置成功");
                             showToast("密码重置成功");
+                            Intent intent=new Intent(ResetPasswordActivity.this,LoginActivity.class);
+                            String info=et_num.getText().toString();
+                            intent.putExtra("num",info);
+                            String info1=et_re_password.getText().toString();
+                            intent.putExtra("pass",info1);
+                            startActivity(intent);
+                            finish();
                         }else{
                             showLog("重置失败：code =" + ex.getErrorCode() + ",msg = " + ex.getLocalizedMessage());
                             showToast("重置失败：code =" + ex.getErrorCode() + ",msg = " + ex.getLocalizedMessage());

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/values-w820dp/dimens.xml -->
+    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values-w820dp/attrs.xml -->
+    <eat-comment/>
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="border_width"/>
+        <attr format="color" name="border_color"/>
+    </declare-styleable>
+    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values-w820dp/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">64dp</dimen>
 </resources>

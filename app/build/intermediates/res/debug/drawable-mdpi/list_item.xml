@@ -7,4 +7,4 @@
     <item android:state_focused="true" android:state_enabled="true" android:state_selected="true" android:state_pressed="false" android:drawable="@drawable/list_item_selected_color" />
     <item android:state_pressed="true" android:drawable="@drawable/list_item_selected_color" />
     <item android:state_enabled="false" android:drawable="@drawable/list_item_unselected_color" />
-</selector><!-- From: file:/F:/Android/Projects/Weenjoy-master/app/src/main/res/drawable-mdpi/list_item.xml -->
+</selector><!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/drawable-mdpi/list_item.xml -->

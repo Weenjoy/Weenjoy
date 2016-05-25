@@ -231,9 +231,7 @@ public class MainActivity extends Activity {
                     intent1.putExtra("keyword", "");
                     startActivity(intent1);
                     break;
-                case 2:                    Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(intent2);
-                    break;
+                case 2:
                 case 3:
                     break;
                 case 4:
@@ -247,7 +245,11 @@ public class MainActivity extends Activity {
                     startActivity(intent6);
                     break;
                 case 7:
+                    Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent2);
+                    finish();
                     break;
+
                 case 8:
                     break;
             }
