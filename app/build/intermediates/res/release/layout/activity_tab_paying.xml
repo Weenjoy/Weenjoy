@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/lv_paying"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+    <ImageView
+        android:id="@+id/iv_paying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/paying"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/paying_loadinglayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="加载中....."
+            android:textColor="#000"
+            android:textSize="24sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="118dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:theme="@android:style/Widget.ProgressBar.Inverse" />
+
+    </LinearLayout>
+</FrameLayout><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_tab_paying.xml -->

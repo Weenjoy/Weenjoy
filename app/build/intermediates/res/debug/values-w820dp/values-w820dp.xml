@@ -1,12 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values-w820dp/attrs.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values-w820dp/attrs.xml -->
     <eat-comment/>
     <declare-styleable name="CircleImageView">
         <attr format="dimension" name="border_width"/>
         <attr format="color" name="border_color"/>
     </declare-styleable>
-    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values-w820dp/dimens.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values-w820dp/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">64dp</dimen>
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values-w820dp/styles.xml -->
+    <eat-comment/>
+    <style name="CustomChannelItem">
+        <item name="android:background">@drawable/channel_bar</item>
+    </style>
+    <style name="CustomGridView" parent="@android:style/Widget.AbsListView">
+        <item name="android:listSelector">@drawable/grid_selector_background</item>
+    </style>
+    <style name="CustomListItem">
+        <item name="android:listSelector">@drawable/list_item</item>
+    </style>
+    <style name="MyCustomTheme" parent="android:Theme">
+        <item name="android:windowTitleBackgroundStyle">@style/TitleBarBackground</item>
+        <item name="android:windowTitleSize">47dp</item>
+    </style>
+    <style name="PopupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="Theme.Dianping" parent="@android:style/Theme.Light">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleSize">45.0dip</item>
+        <item name="android:drawingCacheQuality">auto</item>
+        <item name="android:listDivider">@color/listitem_divide</item>
+    </style>
+    <style name="Theme.DianpingNoTitle" parent="@style/Theme.Dianping">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Theme.DianpingNoTitle.CustomerBackground" parent="@style/Theme.DianpingNoTitle">
+        <item name="android:windowBackground">@drawable/guidance_bg</item>
+    </style>
+    <style name="TitleBarBackground">
+        <item name="android:background">@drawable/bg_title_bar</item>
+    </style>
+    <style name="Widget"/>
+    <style name="Widget.QuickAction" parent="@style/Widget"/>
+    <style name="Widget.QuickAction.Bar" parent="@style/Widget.QuickAction"/>
+    <style name="Widget.QuickAction.Bar.Item" parent="@style/Widget.QuickAction.Item">
+        <item name="android:background">@drawable/quick_action_bar_item</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">80.0dip</item>
+    </style>
+    <style name="Widget.QuickAction.Item" parent="@style/Widget.QuickAction">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff333333</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingRight">10.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawablePadding">5.0dip</item>
+    </style>
 </resources>

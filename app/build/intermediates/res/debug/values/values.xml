@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="base_center_color_pressed">#ffff8c2f</color>
     <color name="base_end_color_default">#ffffffff</color>
@@ -48,71 +48,29 @@
     <color name="white_background">#00ffffff</color>
     <color name="yellow">#ffff7000</color>
     <declare-styleable name="PathView"><attr format="color|reference" name="pathColor"/><attr format="dimension|reference" name="pathWidth"/><attr format="reference" name="svg"/></declare-styleable>
-    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="arrow_offset">5.0dip</dimen>
     <dimen name="box_height">70.0dip</dimen>
     <dimen name="single_box_width">100.0dip</dimen>
-    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="app_name">Dianping</string>
     <string name="hello">Hello World, DianpingActivity!</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_check_base">CheckBaseActivity</string>
+    <string name="title_activity_detail">DetailActivit</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main_personal">MainPersonalActivity</string>
+    <string name="title_activity_mainpersonal">MainpersonalActivity</string>
     <string name="title_activity_my_collection">My_collection</string>
+    <string name="title_activity_my_indent">MyIndentActivity</string>
+    <string name="title_activity_phone_login">PhoneLoginActivity</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_search_history">Search_history</string>
     <string name="title_activity_web_view">WebView</string>
-    <!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
-    <style name="CustomChannelItem">
-        <item name="android:background">@drawable/channel_bar</item>
-    </style>
-    <style name="CustomGridView" parent="@android:style/Widget.AbsListView">
-        <item name="android:listSelector">@drawable/grid_selector_background</item>
-    </style>
-    <style name="CustomListItem">
-        <item name="android:listSelector">@drawable/list_item</item>
-    </style>
-    <style name="MyCustomTheme" parent="android:Theme">
-        <item name="android:windowTitleBackgroundStyle">@style/TitleBarBackground</item>
-        <item name="android:windowTitleSize">47dp</item>
-    </style>
-    <style name="PopupAnimation" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
-        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
-    </style>
-    <style name="Theme.Dianping" parent="@android:style/Theme.Light">
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTitleSize">45.0dip</item>
-        <item name="android:drawingCacheQuality">auto</item>
-        <item name="android:listDivider">@color/listitem_divide</item>
-    </style>
-    <style name="Theme.DianpingNoTitle" parent="@style/Theme.Dianping">
-        <item name="android:windowNoTitle">true</item>
-    </style>
-    <style name="Theme.DianpingNoTitle.CustomerBackground" parent="@style/Theme.DianpingNoTitle">
-        <item name="android:windowBackground">@drawable/guidance_bg</item>
-    </style>
-    <style name="TitleBarBackground">
-        <item name="android:background">@drawable/bg_title_bar</item>
-    </style>
-    <style name="Widget"/>
-    <style name="Widget.QuickAction" parent="@style/Widget"/>
-    <style name="Widget.QuickAction.Bar" parent="@style/Widget.QuickAction"/>
-    <style name="Widget.QuickAction.Bar.Item" parent="@style/Widget.QuickAction.Item">
-        <item name="android:background">@drawable/quick_action_bar_item</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:minWidth">80.0dip</item>
-    </style>
-    <style name="Widget.QuickAction.Item" parent="@style/Widget.QuickAction">
-        <item name="android:textSize">14.0sp</item>
-        <item name="android:textColor">#ff333333</item>
-        <item name="android:paddingLeft">10.0dip</item>
-        <item name="android:paddingRight">10.0dip</item>
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:drawablePadding">5.0dip</item>
-    </style>
 </resources>

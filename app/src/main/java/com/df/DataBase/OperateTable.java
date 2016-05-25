@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,31 +41,49 @@ public class OperateTable {
         db.execSQL(sql);
         db.close();
     }
-    public void insert(String id, String name, String img, String description, String price, String url,int ifbuy) {
+
+    public void insert(String id, String name, String img, String description, String price, String url, int ifbuy) {
         String sql = "INSERT INTO " + TABLENAME + " (id,name,image,description,price,url,ifbuy)VALUES ('" + id + "','" +
                 name + "','" + img + "','" +
-                description + "','" + price + "','" + url + "','"+ifbuy+"')";
+                description + "','" + price + "','" + url + "','" + ifbuy + "')";
         db.execSQL(sql);
         db.close();
     }
+
     public void delete(String id) {
-        String sql = "DELETE FROM " + TABLENAME + " WHERE id=" + id;
+        String sql = "DELETE FROM " + TABLENAME + " WHERE id='" + id+"'";
+        Log.i("info","id");
         db.execSQL(sql);
         db.close();
     }
 
     public boolean queryid(String id) {
+        boolean flag;
         String sql = "SELECT id,name,image,description,price,url FROM " + TABLENAME + " WHERE id= " + id;
         Cursor cursor = db.rawQuery(sql, null);
         if (cursor.getCount() > 0)
-            return false;
+            flag = false;
         else
-            return true;
+            flag = true;
+        db.close();
+        return flag;
+    }
+
+    public boolean queryName(String name) {
+        boolean flag;
+        String sql = "SELECT id,name,image,description,price,url FROM " + TABLENAME + " WHERE name= '" + name+"'";
+        Cursor cursor = db.rawQuery(sql, null);
+        if (cursor.getCount() > 0)
+            flag = false;
+        else
+            flag = true;
+        db.close();
+        return flag;
     }
 
     public List<Map<String, Object>> find() {
         List<Map<String, Object>> list = new ArrayList<>();
-        String sql = "SELECT id,name,image,description,price,url FROM "+TABLENAME;
+        String sql = "SELECT id,name,image,description,price,url FROM " + TABLENAME;
         Cursor cursor = db.rawQuery(sql, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             Map<String, Object> map = new HashMap<>();
@@ -75,6 +94,7 @@ public class OperateTable {
             map.put("description", cursor.getString(3));
             map.put("current_price", cursor.getString(4));
             map.put("deal_murl", cursor.getString(5));
+            map.put("selected",false);
             list.add(map);
         }
         db.close();
@@ -83,7 +103,7 @@ public class OperateTable {
 
     public List<Map<String, Object>> find(int temp) {
         List<Map<String, Object>> list = new ArrayList<>();
-        String sql = "SELECT id,name,image,description,price,url FROM "+TABLENAME+" Where ifbuy= "+temp;
+        String sql = "SELECT id,name,image,description,price,url FROM " + TABLENAME + " Where ifbuy= " + temp;
         Cursor cursor = db.rawQuery(sql, null);
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             Map<String, Object> map = new HashMap<>();

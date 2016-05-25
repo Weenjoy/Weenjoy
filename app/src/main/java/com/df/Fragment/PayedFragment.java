@@ -42,7 +42,7 @@ public class PayedFragment  extends Fragment {
                     loadinglayout.setVisibility(View.GONE);
                     if(datalist.size()==0)
                         ivPayed.setVisibility(View.VISIBLE);
-                        break;
+                    break;
             }
         }
     };

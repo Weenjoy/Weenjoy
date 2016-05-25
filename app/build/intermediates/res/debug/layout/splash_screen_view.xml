@@ -6,4 +6,4 @@
     android:layout_height="wrap_content"
     app:pathColor="@android:color/black"
     app:pathWidth="1dp"
-    app:svg="@raw/tx1" /><!-- From: file:/E:/作业/大三下学期/软件案例分析/Weenjoy-master/app/src/main/res/layout/splash_screen_view.xml -->
+    app:svg="@raw/tx1" /><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/splash_screen_view.xml -->

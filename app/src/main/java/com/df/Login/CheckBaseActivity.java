@@ -6,15 +6,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.df.dianping.R;
 
 import cn.bmob.v3.BmobSMS;
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.RequestSMSCodeListener;
-import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Created by Administrator on 2016/5/25.
@@ -29,13 +26,7 @@ public class CheckBaseActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check);
-
-
-
-
-
-
+        setContentView(R.layout.activity_check_base);
 
 
 

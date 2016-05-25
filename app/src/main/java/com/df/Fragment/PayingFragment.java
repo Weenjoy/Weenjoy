@@ -42,8 +42,8 @@ public class PayingFragment extends Fragment {
                     adapter.setList(datalist);
                     loadinglayout.setVisibility(View.GONE);
                     if(datalist.size()==0)
-                       ivPaying.setVisibility(View.VISIBLE);
-                        break;
+                        ivPaying.setVisibility(View.VISIBLE);
+                    break;
             }
         }
     };

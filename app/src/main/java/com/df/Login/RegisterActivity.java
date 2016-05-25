@@ -7,7 +7,6 @@ import android.view.View;
 
 import com.df.User.MyUser;
 
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.SaveListener;
 
 /**
@@ -37,10 +36,10 @@ public class RegisterActivity extends ResetPasswordActivity {
                     @Override
                     public void onSuccess() {
                         // TODO Auto-generated method stub
-                        toast("注册或登录成功");
+                        toast("注册成功");
                         Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
                         String info=et_num.getText().toString();
-                        intent.putExtra("num",info);
+                        intent.putExtra("account",info);
                         String info1=et_re_password.getText().toString();
                         intent.putExtra("pass",info1);
                         startActivity(intent);

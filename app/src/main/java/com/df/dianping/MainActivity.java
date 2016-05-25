@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
@@ -21,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,16 +36,16 @@ import com.df.Collect.Mycollection;
 import com.df.GetDataFromNet.Getdata;
 import com.df.GetDataFromNet.MyApplication;
 import com.df.Indent.MyIndentActivity;
-import com.df.Login.LoginActivity;
 import com.df.Search.Search;
 import com.df.Search.Search_history;
+import com.df.User.MyUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobUser;
 
 import static com.df.dianping.R.id.main_search_btn;
 
@@ -59,6 +62,7 @@ public class MainActivity extends Activity {
     private Button button;
     private ImageView delete;
     private String content;
+    private LinearLayout locatedLayout;
     public AMapLocationClientOption mLocationOption = null;
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
@@ -81,19 +85,24 @@ public class MainActivity extends Activity {
             }
         }
     };
-
-    private static final String BmobAppID= "2cdc69b8257c5b4f65cc5b241a5a3e73";
+    private Handler handler = new Handler() {
+        public void handleMessage(Message message) {
+            switch (message.what) {
+                case 1:
+                    locatedLayout.setVisibility(View.GONE);
+            }
+        }
+    };
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-        Bmob.initialize(MainActivity.this,BmobAppID);
         view = this.getLayoutInflater().inflate(R.layout.main, null);
         setContentView(view);
         button = (Button) findViewById(main_search_btn);
         search_content = (EditText) findViewById(R.id.main_search);
         delete = (ImageView) findViewById(R.id.main_search_delete);
+        locatedLayout= (LinearLayout) findViewById(R.id.main_located_layout);
 
         localDisplayMetrics = getResources().getDisplayMetrics();
         list = new ArrayList<>();
@@ -103,15 +112,17 @@ public class MainActivity extends Activity {
         grid.setOnItemClickListener(mOnClickListener);
 
         //解析数据线程
-        Thread thread = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 new MyApplication();
                 list = Getdata.getcityfromjson(Getdata.cityrequest("http://apis.baidu.com/baidunuomi/openapi/cities", ""));
                 initlocation();
+                Message message = Message.obtain();
+                message.what = 1;
+                handler.sendMessage(message);
             }
-        });
-        thread.start();
+        }).start();
         initsearchdata();
     }
 
@@ -128,8 +139,7 @@ public class MainActivity extends Activity {
                         Intent intent = new Intent(MainActivity.this, Search.class);
                         intent.putExtra("keyword", content);
                         startActivity(intent);
-                    }
-                    else
+                    } else
                         Toast.makeText(MainActivity.this, "搜索内容不能为空", Toast.LENGTH_SHORT).show();
                 }
                 return true;
@@ -169,9 +179,8 @@ public class MainActivity extends Activity {
                     Intent intent = new Intent(MainActivity.this, Search.class);
                     intent.putExtra("keyword", content);
                     startActivity(intent);
-                }
-                else
-                    Toast.makeText(MainActivity.this,"搜索内容不能为空",Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(MainActivity.this, "搜索内容不能为空", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -232,6 +241,7 @@ public class MainActivity extends Activity {
                     startActivity(intent1);
                     break;
                 case 2:
+                    break;
                 case 3:
                     break;
                 case 4:
@@ -245,11 +255,9 @@ public class MainActivity extends Activity {
                     startActivity(intent6);
                     break;
                 case 7:
-                    Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(intent2);
-                    finish();
+                    Intent intent7 = new Intent(MainActivity.this, MainpersonalActivity.class);
+                    startActivity(intent7);
                     break;
-
                 case 8:
                     break;
             }

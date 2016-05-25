@@ -22,6 +22,7 @@ public class ShopListAdapter extends BaseAdapter {
     private List<Map<String, Object>> list;
     private LayoutInflater minflater;
 
+
     public ShopListAdapter(Context context, List<Map<String, Object>> list) {
         this.context = context;
         this.list = list;
@@ -44,25 +45,40 @@ public class ShopListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
+        ViewHolder viewHolder;
         if (view == null) {
             view = minflater.inflate(R.layout.listadapter, null);
+            viewHolder = new ViewHolder();
+            viewHolder.mImageView = (ImageView) view.findViewById(R.id.list_image);
+            viewHolder.name = (TextView) view.findViewById(R.id.list_shop_name);
+            viewHolder.description = (TextView) view.findViewById(R.id.list_shop_description);
+            viewHolder.price = (TextView) view.findViewById(R.id.list_shop_price);
+            view.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) view.getTag();
         }
-        ImageView imageView = (ImageView) view.findViewById(R.id.list_image);
-        TextView name = (TextView) view.findViewById(R.id.list_shop_name);
-        TextView description = (TextView) view.findViewById(R.id.list_shop_description);
-        TextView price = (TextView) view.findViewById(R.id.list_shop_price);
-        imageView.setImageBitmap((Bitmap) list.get(i).get("tiny_image"));
-        name.setText(list.get(i).get("shop_name").toString());
-        description.setText(list.get(i).get("description").toString());
-        price.setText("¥"+String.valueOf(Integer.parseInt(list.get(i).get("current_price").toString()) / 100));
+        viewHolder.mImageView.setImageBitmap((Bitmap) list.get(i).get("tiny_image"));
+        viewHolder.name.setText(list.get(i).get("shop_name").toString());
+        viewHolder.description.setText(list.get(i).get("description").toString());
+        viewHolder.price.setText("¥" + String.valueOf(Integer.parseInt(list.get(i).get("current_price").toString()) / 100));
 
         return view;
+    }
+
+
+    private static class ViewHolder {
+        ImageView mImageView;
+        TextView name;
+        TextView price;
+        TextView description;
+
     }
 
     public void setList(List<Map<String, Object>> list) {
         this.list = list;
         notifyDataSetChanged();
     }
+
 
 }

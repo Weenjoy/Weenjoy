@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#ffffffff"
-    android:orientation="vertical">
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#ffffffff"
+              android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -17,14 +17,14 @@
             android:layout_gravity="center_vertical"
             android:text="Weenjoy"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#ffffffff" />
+            android:textColor="#ffffffff"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_arrow_down"
-            android:textColor="#ffffffff" />
+            android:textColor="#ffffffff"/>
     </LinearLayout>
 
 
@@ -48,7 +48,7 @@
                 android:hint="输入商户名,地址等..."
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
             <ImageView
                 android:id="@+id/main_search_delete"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_vertical"
                 android:src="@drawable/delete"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
         </FrameLayout>
 
@@ -67,22 +67,49 @@
             android:layout_gravity="right|center_vertical"
 
             android:text="搜索"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
     </LinearLayout>
 
-    <GridView
-        android:id="@+id/my_grid"
-        style="@style/CustomGridView"
-        android:layout_width="fill_parent"
-        android:layout_height="0.0px"
-        android:layout_marginTop="0.0dip"
-        android:layout_weight="1.0"
-        android:columnWidth="60.0dip"
-        android:gravity="center"
-        android:horizontalSpacing="10.0dip"
-        android:numColumns="3"
-        android:paddingTop="20dip"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="20.0dip" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/my_grid"
+            style="@style/CustomGridView"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="60.0dip"
+            android:horizontalSpacing="10.0dip"
+            android:numColumns="3"
+            android:paddingTop="20dip"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="20.0dip"/>
+
+        <LinearLayout
+            android:id="@+id/main_located_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="定位中....."
+                android:textColor="#000"
+                android:textSize="24sp"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:theme="@android:style/Widget.ProgressBar.Inverse"/>
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout> 

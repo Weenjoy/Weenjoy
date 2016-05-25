@@ -2,7 +2,6 @@ package com.df.dianping;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -11,15 +10,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.df.DataBase.DataBaseHelp;
 import com.df.DataBase.IndentDataBase;
 import com.df.DataBase.OperateTable;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class WebViewActivity extends Activity {
@@ -33,19 +28,31 @@ public class WebViewActivity extends Activity {
     private Button Buy;
     private RelativeLayout rlBuy;
     private LinearLayout loadinglayout;
+    private boolean isCollected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        help = new DataBaseHelp(this);
-        idb = new IndentDataBase(this);
+
+        name = getIntent().getStringExtra("shop_name");
+
+
         collect = (ImageView) findViewById(R.id.webview_collect);
         back = (ImageView) findViewById(R.id.webview_back);
         webView = (WebView) findViewById(R.id.webview);
         Buy = (Button) findViewById(R.id.btn_buy);
         rlBuy = (RelativeLayout) findViewById(R.id.rl_buy);
-        loadinglayout=(LinearLayout)findViewById(R.id.webview_loadinglayout);
+        loadinglayout = (LinearLayout) findViewById(R.id.webview_loadinglayout);
+
+        help = new DataBaseHelp(this);
+        idb = new IndentDataBase(this);
+        table = new OperateTable(help.getWritableDatabase(), 1);
+        if (table.queryName(name))
+            collect.setImageResource(R.drawable.collect_before);
+        else
+            collect.setImageResource(R.drawable.collect_after);
+
         webView.setWebViewClient(new WebViewClient() {
             public boolean shshouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
@@ -76,18 +83,24 @@ public class WebViewActivity extends Activity {
         collect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                name = getIntent().getStringExtra("shop_name");
-                img = getIntent().getStringExtra("tiny_image");
-                price = getIntent().getStringExtra("current_price");
-                description = getIntent().getStringExtra("description");
                 id = getIntent().getStringExtra("id");
                 table = new OperateTable(help.getWritableDatabase(), 1);
-                if (table.queryid(id))
+                if (isCollected) {
+                    isCollected = false;
+                    collect.setImageResource(R.drawable.collect_before);
+                    table.delete(id);
+                } else {
+                    isCollected = true;
+                    img = getIntent().getStringExtra("tiny_image");
+                    price = getIntent().getStringExtra("current_price");
+                    description = getIntent().getStringExtra("description");
                     table.insert(id, name, img, description, price, url);
-                else
-                    Toast.makeText(WebViewActivity.this, "你已收藏该店铺", Toast.LENGTH_SHORT).show();
+                    collect.setImageResource(R.drawable.collect_after);
+                }
+
             }
         });
+
         Buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +111,7 @@ public class WebViewActivity extends Activity {
                 id = getIntent().getStringExtra("id");
                 table = new OperateTable(idb.getWritableDatabase(), 2);
                 if (table.queryid(id)) {
+                    table = new OperateTable(idb.getWritableDatabase(), 2);
                     table.insert(id, name, img, description, price, url, 0);
                     Toast.makeText(WebViewActivity.this, "下单成功", Toast.LENGTH_SHORT).show();
                 } else

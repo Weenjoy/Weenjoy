@@ -1,12 +1,9 @@
 package com.df.Indent;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.DisplayMetrics;
@@ -16,9 +13,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.df.Fragment.*;
+import com.df.Fragment.AllFragment;
+import com.df.Fragment.PayedFragment;
+import com.df.Fragment.PayingFragment;
 import com.df.adapter.FragmentAdapter;
 import com.df.dianping.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyIndentActivity extends FragmentActivity {
 

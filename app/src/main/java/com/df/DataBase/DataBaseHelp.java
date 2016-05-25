@@ -19,7 +19,7 @@ public class DataBaseHelp extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sql = "CREATE TABLE " + TABLENAME + " (" + "id VARCHAR(10) NOT NULL ,"+
+        String sql = "CREATE TABLE " + TABLENAME + " (" + "id VARCHAR(10) PRIMARY KEY ,"+
                 "name VARCHAR(50) NOT NULL ," +
                 "image VARCHAR(300) NOT NULL ," +
                 "description VARCHAR(150) ," +

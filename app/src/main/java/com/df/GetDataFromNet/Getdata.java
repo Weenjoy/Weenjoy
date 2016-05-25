@@ -278,7 +278,6 @@ public class Getdata {
                         Map<String, String> map1 = new HashMap<>();
                         map1.put("subcat_name", object1.getString("subcat_name"));
                         map1.put("subcat_id", object1.getInt("subcat_id") + "");
-
                         list1.add(map1);
                     }
                     map.put("list", list1);
