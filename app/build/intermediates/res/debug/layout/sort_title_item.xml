@@ -6,4 +6,4 @@
 		android:layout_height="wrap_content" android:textColor="#ffffffff"
 		style="@style/CustomChannelItem" 
 		xmlns:android="http://schemas.android.com/apk/res/android" 
-		/><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/sort_title_item.xml -->
+		/><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/sort_title_item.xml -->

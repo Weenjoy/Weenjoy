@@ -46,7 +46,6 @@ import java.util.List;
 import java.util.Map;
 
 import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.listener.FindListener;
 
 public class MainpersonalActivity extends Activity implements OnClickListener {
@@ -58,12 +57,10 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
     private Button editButton;
     private SelectPicPopupWindow menuWindow;  //自定义的头像编辑弹出框
     private TextView usertxt;
-    private boolean isLogin ;
+    private boolean isLogin;
 
     private TextView account;
     private String account2 = "";
-
-    private Button quitButton;
 
     //上传服务器的路径【一般不硬编码到程序中】
     private String imgUrl = "";
@@ -82,18 +79,15 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
         setContentView(R.layout.activity_mainpersonal);
         mContext = MainpersonalActivity.this;
 
-        MyUser userInfo = BmobUser.getCurrentUser(MainpersonalActivity.this, MyUser.class);
-
         initViews();
+        Intent intent = getIntent();
+        account2 = intent.getStringExtra("account");
+        isLogin = intent.getBooleanExtra("isLogin", false);
+        account.setText(account2);
 
 
-
-
-        if (userInfo!=null) {
-            quitButton.setClickable(true);
-            account2=userInfo.getUsername();
-            account.setText(account2);
-            usertxt.setText("昵称");
+        if (isLogin) {
+            usertxt.setText("昵称:无");
 
             BmobQuery<MyUser> query = new BmobQuery<MyUser>();
             query.addWhereEqualTo("username", account2);
@@ -101,7 +95,10 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
                 @Override
                 public void onSuccess(List<MyUser> object) {
                     // TODO Auto-generated method stub
-                    usertxt.setText(object.get(0).getNick());
+//                    String str ="";
+//                    str=object.get(0).getNick();
+//                    if (str.length()>0)
+//                        usertxt.setText(str);
                     account.setText(object.get(0).getUsername());
                 }
 
@@ -112,10 +109,6 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
                 }
             });
         }
-        else {
-            quitButton.setClickable(false);
-        }
-
 
 
     }
@@ -129,11 +122,11 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
         back = (ImageView) findViewById(R.id.iv_indent_back);
         usertxt = (TextView) findViewById(R.id.userNameTxt);
         account = (TextView) findViewById(R.id.account);
-        quitButton=(Button) findViewById(R.id.bt_quit);
         usertxt.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!isLogin) {
+                    //数据库中有无登录过的账号
                     Intent intent = new Intent(MainpersonalActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
@@ -142,7 +135,6 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
         avatarImg.setOnClickListener(this);
         editButton.setOnClickListener(this);
         back.setOnClickListener(this);
-        quitButton.setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -170,18 +162,6 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
 
             case R.id.iv_indent_back://返回界面
                 startActivity(new Intent(mContext, MainActivity.class));
-                break;
-            case R.id.bt_quit:
-
-                Intent it = new Intent(MainpersonalActivity.this, LoginActivity.class);
-                String info = account2;
-
-                BmobUser.logOut(MainpersonalActivity.this);   //清除缓存用户对象
-                BmobUser currentUser = BmobUser.getCurrentUser(MainpersonalActivity.this); // 现在的currentUser是null了
-
-                it.putExtra("account", info);
-                startActivity(it);
-
                 break;
 
             default:

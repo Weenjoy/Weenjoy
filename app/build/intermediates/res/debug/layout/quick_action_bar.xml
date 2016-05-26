@@ -12,4 +12,4 @@
     <FrameLayout android:id="@+id/gdi_footer" android:background="@drawable/quick_action_bar_bottom_frame" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@+id/gdi_scroll" />
     <ImageView android:id="@+id/gdi_arrow_up" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/quick_action_arrow_up" />
     <ImageView android:id="@+id/gdi_arrow_down" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-1.0px" android:src="@drawable/quick_action_bar_arrow_down" android:layout_below="@+id/gdi_footer" android:layout_centerInParent="true"/>
-</RelativeLayout><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/quick_action_bar.xml -->
+</RelativeLayout><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/quick_action_bar.xml -->

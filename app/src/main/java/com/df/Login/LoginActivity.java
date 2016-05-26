@@ -40,7 +40,7 @@ public class LoginActivity extends BaseActivity {
         tv_return=(TextView)findViewById(R.id.tv_return);
 
         Intent i=super.getIntent();
-        et_accout.setText(i.getStringExtra("account"));
+        et_accout.setText(i.getStringExtra("num"));
         et_password.setText(i.getStringExtra("pass"));
 
 
@@ -72,15 +72,6 @@ public class LoginActivity extends BaseActivity {
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(et_accout.getText().toString().isEmpty()){
-                    toast("请输入账号");
-                    return;
-                }
-                if(et_password.getText().toString().isEmpty()){
-                    toast("请输入密码");
-                    return;
-                }
-
                 BmobUser.loginByAccount(LoginActivity.this, et_accout.getText().toString(), et_password.getText().toString(), new LogInListener<MyUser>() {
 
                     @Override
@@ -95,9 +86,6 @@ public class LoginActivity extends BaseActivity {
                             intent.putExtra("isLogin", true);
                             startActivity(intent);
                             finish();
-                        }
-                        else{
-                            toast(e.getMessage());
                         }
                     }
                 });

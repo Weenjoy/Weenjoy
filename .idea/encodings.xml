@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/df/Circle/CircleImg.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/df/Circle/FileUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/df/Circle/NetUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/df/Circle/SelectPicPopupWindow.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/df/Circle/UploadActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/df/Fragment/AllFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/df/adapter/AreaAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/bg_title_bar.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/indent.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/payed.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/paying.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/sign.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/bar.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/attrs.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/styles.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
