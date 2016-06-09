@@ -26,14 +26,6 @@
             android:text="个人信息"
             android:textSize="24sp"/>
 
-        <Button
-            android:id="@+id/Edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center_vertical"
-            android:text="编辑"
-            android:textSize="20dp"/>
-
     </FrameLayout>
 
     <View
@@ -55,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/avatarImg"
-        android:layout_gravity="center_horizontal"
+       android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:text="点击登录"
         android:textColor="#000"
@@ -91,9 +83,9 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_below="@id/line2"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1">
+        android:layout_marginTop="10dp">
 
         <TableRow
             android:id="@+id/row"
@@ -146,5 +138,33 @@
     </FrameLayout>
 
 
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/Edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="编辑资料"
+            android:textSize="20dp"/>
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/bt_quit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="退出登录"
+            android:textSize="20dp"/>
+
+    </TableRow>
+
 </LinearLayout>
-<!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_mainpersonal.xml -->
+<!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/activity_mainpersonal.xml -->

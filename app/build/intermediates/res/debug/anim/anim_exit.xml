@@ -14,4 +14,4 @@
         android:duration="@android:integer/config_mediumAnimTime"
         android:fromAlpha="1.0"
         android:toAlpha="0.0" />
-</set><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/anim/anim_exit.xml -->
+</set><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/anim/anim_exit.xml -->

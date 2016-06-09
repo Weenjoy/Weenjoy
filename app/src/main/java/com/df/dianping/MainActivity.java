@@ -38,11 +38,14 @@ import com.df.GetDataFromNet.MyApplication;
 import com.df.Indent.MyIndentActivity;
 import com.df.Search.Search;
 import com.df.Search.Search_history;
+import com.df.User.MyUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import cn.bmob.v3.BmobUser;
 
 import static com.df.dianping.R.id.main_search_btn;
 
@@ -253,8 +256,6 @@ public class MainActivity extends Activity {
                     break;
                 case 7:
                     Intent intent7 = new Intent(MainActivity.this, MainpersonalActivity.class);
-                    intent7.putExtra("account","");
-                    intent7.putExtra("isLogin",false);
                     startActivity(intent7);
                     break;
                 case 8:

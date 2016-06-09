@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <scale android:duration="@android:integer/config_mediumAnimTime" android:pivotX="50.0%" android:pivotY="50.0%" android:fromXScale="1.5" android:toXScale="1.0" android:fromYScale="1.5" android:toYScale="1.0" />
     <alpha android:duration="@android:integer/config_mediumAnimTime" android:fromAlpha="0.4" android:toAlpha="1.0" />
-</set><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/anim/back_enter.xml -->
+</set><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/anim/back_enter.xml -->

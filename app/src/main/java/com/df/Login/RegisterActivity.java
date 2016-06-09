@@ -39,7 +39,7 @@ public class RegisterActivity extends ResetPasswordActivity {
                         toast("注册成功");
                         Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
                         String info=et_num.getText().toString();
-                        intent.putExtra("num",info);
+                        intent.putExtra("account",info);
                         String info1=et_re_password.getText().toString();
                         intent.putExtra("pass",info1);
                         startActivity(intent);

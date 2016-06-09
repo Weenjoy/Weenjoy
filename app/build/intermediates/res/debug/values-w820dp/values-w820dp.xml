@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/values-w820dp/attrs.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values-w820dp/attrs.xml -->
     <eat-comment/>
     <declare-styleable name="CircleImageView">
         <attr format="dimension" name="border_width"/>
         <attr format="color" name="border_color"/>
     </declare-styleable>
-    <!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/values-w820dp/dimens.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values-w820dp/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">64dp</dimen>
-    <!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/values-w820dp/styles.xml -->
+    <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/values-w820dp/styles.xml -->
     <eat-comment/>
     <style name="CustomChannelItem">
         <item name="android:background">@drawable/channel_bar</item>
