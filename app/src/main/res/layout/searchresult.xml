@@ -2,8 +2,8 @@
 
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mytest"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffff"
@@ -20,48 +20,13 @@
         android:paddingRight="5dip"
         android:paddingTop="5dip">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="搜索 - 美食"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="#ffffffff" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="【共2345家】"
-                android:textAppearance="?android:textAppearanceMediumInverse"
-                android:textColor="#ffffffff"
-                android:textSize="14.0sp" />
-
-        </LinearLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|center_vertical"
-                android:background="@drawable/btn_weight"
-                android:text="添加商户"
-                android:textAppearance="?android:textAppearanceMediumInverse"
-                android:textColor="#ffffffff"
-                android:textSize="14.0sp" />
-        </FrameLayout>
-        >
-
+            android:layout_gravity="center_vertical"
+            android:text="搜索"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#ffffffff"/>
     </LinearLayout>
 
     <LinearLayout
@@ -84,8 +49,7 @@
                 android:background="@drawable/btn_dropdown"
                 android:paddingBottom="10dip"
                 android:paddingTop="10dip"
-                android:text="全部地区"
-                android:textColor="@color/yellow" />
+                android:textColor="@color/yellow"/>
 
         </LinearLayout>
 
@@ -101,26 +65,9 @@
                 android:background="@drawable/btn_dropdown"
                 android:paddingBottom="10dip"
                 android:paddingTop="10dip"
-                android:text="美食"
-                android:textColor="@color/yellow" />
+                android:textColor="@color/yellow"/>
 
         </LinearLayout>
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <ImageButton
-                android:id="@+id/id_sort"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:background="@drawable/btn_circle"
-                android:src="@drawable/ic_arrow_down" />
-
-        </FrameLayout>
-
     </LinearLayout>
 
     <FrameLayout
@@ -143,7 +90,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_above="@+id/textView"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:id="@+id/textView"
@@ -153,7 +100,7 @@
                 android:layout_centerVertical="true"
                 android:text="加载中，请稍后......"
                 android:textColor="#000"
-                android:textSize="24sp" />
+                android:textSize="24sp"/>
         </RelativeLayout>
     </FrameLayout>
 

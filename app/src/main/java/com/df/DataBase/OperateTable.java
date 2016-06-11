@@ -4,7 +4,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,6 +30,8 @@ public class OperateTable {
             case 2:
                 TABLENAME = "Indent";
                 break;
+            case 3:
+                TABLENAME = "history";
         }
     }
 
@@ -50,10 +51,31 @@ public class OperateTable {
         db.close();
     }
 
-    public void delete(String id) {
-        String sql = "DELETE FROM " + TABLENAME + " WHERE id='" + id+"'";
-        Log.i("info","id");
+    public void insertSearchHistory(String name) {
+        String sql = "INSERT INTO " + TABLENAME + " (name)VALUES ('" + name + " ')";
         db.execSQL(sql);
+        db.close();
+    }
+
+    public void delete(String id) {
+        String sql = "DELETE FROM " + TABLENAME + " WHERE id='" + id + "'";
+        db.execSQL(sql);
+        db.close();
+    }
+
+    public void deleteSearchHistory(String name) {
+        String sql = "DELETE FROM " + TABLENAME + " WHERE name='" + name + "'";
+        db.execSQL(sql);
+        db.close();
+    }
+
+    public void deleteAllSearchHistory() {
+        String sql = "DELETE FROM " + TABLENAME;
+        db.execSQL(sql);
+
+        String sql1 = "update sqlite_sequence set seq=0 where name='" + TABLENAME + "'";
+        db.execSQL(sql1);
+
         db.close();
     }
 
@@ -71,7 +93,19 @@ public class OperateTable {
 
     public boolean queryName(String name) {
         boolean flag;
-        String sql = "SELECT id,name,image,description,price,url FROM " + TABLENAME + " WHERE name= '" + name+"'";
+        String sql = "SELECT id,name,image,description,price,url FROM " + TABLENAME + " WHERE name= '" + name + "'";
+        Cursor cursor = db.rawQuery(sql, null);
+        if (cursor.getCount() > 0)
+            flag = false;
+        else
+            flag = true;
+        db.close();
+        return flag;
+    }
+
+    public boolean querySearchHistory(String name) {
+        boolean flag;
+        String sql = "SELECT id,name FROM " + TABLENAME + " WHERE name= '" + name + "'";
         Cursor cursor = db.rawQuery(sql, null);
         if (cursor.getCount() > 0)
             flag = false;
@@ -94,7 +128,7 @@ public class OperateTable {
             map.put("description", cursor.getString(3));
             map.put("current_price", cursor.getString(4));
             map.put("deal_murl", cursor.getString(5));
-            map.put("selected",false);
+            map.put("selected", false);
             list.add(map);
         }
         db.close();
@@ -117,6 +151,16 @@ public class OperateTable {
             list.add(map);
         }
         db.close();
+        return list;
+    }
+
+    public List<String> getSearchHistory() {
+        List<String> list = new ArrayList<>();
+        String sql = "SELECT id,name FROM " + TABLENAME;
+        Cursor cursor = db.rawQuery(sql, null);
+        for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            list.add(cursor.getString(1));
+        }
         return list;
     }
 

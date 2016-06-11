@@ -23,6 +23,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.df.DataBase.OperateTable;
+import com.df.DataBase.SearchHistoryDataBase;
 import com.df.Search.Search;
 
 import java.util.List;
@@ -36,6 +38,8 @@ public class CategoryActivity extends Activity {
     private ImageView delete;
     private Button btn;
     private String content;
+    private OperateTable table;
+    private SearchHistoryDataBase mDataBase;
 
     Handler handler = new Handler() {
         public void handleMessage(Message paramMessage) {
@@ -52,6 +56,7 @@ public class CategoryActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mDataBase = new SearchHistoryDataBase(this);
 
         view = this.getLayoutInflater().inflate(R.layout.category, null);
 
@@ -109,6 +114,8 @@ public class CategoryActivity extends Activity {
                     Intent intent = new Intent(CategoryActivity.this, Search.class);
                     intent.putExtra("keyword", content);
                     startActivity(intent);
+                    table = new OperateTable(mDataBase.getWritableDatabase(), 3);
+                    table.insertSearchHistory(content);
                 }
             }
         });
@@ -126,7 +133,7 @@ public class CategoryActivity extends Activity {
     };
 
 
-    public final class ViewHolder {
+    public static class ViewHolder {
         public ImageView img;
         public TextView title;
     }

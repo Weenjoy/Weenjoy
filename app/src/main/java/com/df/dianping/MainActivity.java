@@ -33,23 +33,25 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.df.Collect.Mycollection;
+import com.df.DataBase.OperateTable;
+import com.df.DataBase.SearchHistoryDataBase;
 import com.df.GetDataFromNet.Getdata;
 import com.df.GetDataFromNet.MyApplication;
 import com.df.Indent.MyIndentActivity;
 import com.df.Search.Search;
-import com.df.Search.Search_history;
-import com.df.User.MyUser;
+import com.df.Search.SearchHistory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.Bmob;
 
 import static com.df.dianping.R.id.main_search_btn;
 
 public class MainActivity extends Activity {
+    public static final String AppKey="2cdc69b8257c5b4f65cc5b241a5a3e73";
 
     public static List<Map<String, Object>> mlist;
     public static String CITYCODE;
@@ -63,6 +65,8 @@ public class MainActivity extends Activity {
     private ImageView delete;
     private String content;
     private LinearLayout locatedLayout;
+    private OperateTable table;
+    private SearchHistoryDataBase mDataBase;
     public AMapLocationClientOption mLocationOption = null;
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
@@ -96,13 +100,14 @@ public class MainActivity extends Activity {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        Bmob.initialize(MainActivity.this, AppKey);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         view = this.getLayoutInflater().inflate(R.layout.main, null);
         setContentView(view);
         button = (Button) findViewById(main_search_btn);
         search_content = (EditText) findViewById(R.id.main_search);
         delete = (ImageView) findViewById(R.id.main_search_delete);
-        locatedLayout= (LinearLayout) findViewById(R.id.main_located_layout);
+        locatedLayout = (LinearLayout) findViewById(R.id.main_located_layout);
 
         localDisplayMetrics = getResources().getDisplayMetrics();
         list = new ArrayList<>();
@@ -110,6 +115,8 @@ public class MainActivity extends Activity {
         ListAdapter adapter = new GridAdapter(this);
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(mOnClickListener);
+
+        mDataBase = new SearchHistoryDataBase(this);
 
         //解析数据线程
         new Thread(new Runnable() {
@@ -139,6 +146,8 @@ public class MainActivity extends Activity {
                         Intent intent = new Intent(MainActivity.this, Search.class);
                         intent.putExtra("keyword", content);
                         startActivity(intent);
+                        table = new OperateTable(mDataBase.getWritableDatabase(), 3);
+                        table.insertSearchHistory(content);
                     } else
                         Toast.makeText(MainActivity.this, "搜索内容不能为空", Toast.LENGTH_SHORT).show();
                 }
@@ -179,6 +188,8 @@ public class MainActivity extends Activity {
                     Intent intent = new Intent(MainActivity.this, Search.class);
                     intent.putExtra("keyword", content);
                     startActivity(intent);
+                    table = new OperateTable(mDataBase.getWritableDatabase(), 3);
+                    table.insertSearchHistory(content);
                 } else
                     Toast.makeText(MainActivity.this, "搜索内容不能为空", Toast.LENGTH_SHORT).show();
             }
@@ -236,7 +247,7 @@ public class MainActivity extends Activity {
                     overridePendingTransition(R.anim.main_enter, R.anim.main_exit);
                     break;
                 case 1:
-                    Intent intent1 = new Intent(MainActivity.this, Search_history.class);
+                    Intent intent1 = new Intent(MainActivity.this, SearchHistory.class);
                     intent1.putExtra("keyword", "");
                     startActivity(intent1);
                     break;
@@ -256,6 +267,8 @@ public class MainActivity extends Activity {
                     break;
                 case 7:
                     Intent intent7 = new Intent(MainActivity.this, MainpersonalActivity.class);
+                    intent7.putExtra("account", "");
+                    intent7.putExtra("isLogin", false);
                     startActivity(intent7);
                     break;
                 case 8:

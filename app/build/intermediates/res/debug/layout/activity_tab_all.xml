@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
     <ImageView
         android:id="@+id/iv_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/indent"
         android:visibility="gone"/>
+
     <ListView
         android:id="@+id/lv_all"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
+
     <LinearLayout
         android:id="@+id/all_loadinglayout"
         android:layout_width="match_parent"
@@ -26,14 +30,14 @@
             android:layout_gravity="center"
             android:text="加载中....."
             android:textColor="#000"
-            android:textSize="24sp" />
+            android:textSize="24sp"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="118dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:theme="@android:style/Widget.ProgressBar.Inverse" />
+            android:theme="@android:style/Widget.ProgressBar.Inverse"/>
 
     </LinearLayout>
-</FrameLayout><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/activity_tab_all.xml -->
+</FrameLayout><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_tab_all.xml -->

@@ -58,7 +58,6 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
     private Button editButton;
     private SelectPicPopupWindow menuWindow;  //自定义的头像编辑弹出框
     private TextView usertxt;
-    private boolean isLogin ;
 
     private TextView account;
     private String account2 = "";
@@ -75,20 +74,16 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
     private static final int REQUESTCODE_TAKE = 1;    //相机拍照标记
     private static final int REQUESTCODE_CUTTING = 2;     //图片裁切标记
 
+    private MyUser userInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpersonal);
         mContext = MainpersonalActivity.this;
-
-        MyUser userInfo = BmobUser.getCurrentUser(MainpersonalActivity.this, MyUser.class);
-
+        userInfo = BmobUser.getCurrentUser(MainpersonalActivity.this, MyUser.class);
         initViews();
-
-
-
-
         if (userInfo!=null) {
             quitButton.setClickable(true);
             account2=userInfo.getUsername();
@@ -104,7 +99,6 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
                     usertxt.setText(object.get(0).getNick());
                     account.setText(object.get(0).getUsername());
                 }
-
                 @Override
                 public void onError(int code, String msg) {
                     // TODO Auto-generated method stub
@@ -133,7 +127,7 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
         usertxt.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!isLogin) {
+                if (userInfo==null) {
                     Intent intent = new Intent(MainpersonalActivity.this, LoginActivity.class);
                     startActivity(intent);
                 }
@@ -148,7 +142,7 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.avatarImg:// 更换头像点击事件
-                if (isLogin) {
+                if (userInfo!=null) {
                     menuWindow = new SelectPicPopupWindow(mContext, itemsOnClick);
                     menuWindow.showAtLocation(findViewById(R.id.personLayout),
                             Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -158,7 +152,7 @@ public class MainpersonalActivity extends Activity implements OnClickListener {
                 break;
 
             case R.id.Edit:   //信息编辑点击事件
-                if (isLogin) {
+                if (userInfo!=null) {
                     Intent it = new Intent(MainpersonalActivity.this, UploadActivity.class);
                     String info = account2;
                     it.putExtra("account", info);

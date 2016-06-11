@@ -83,14 +83,13 @@ public class UploadActivity extends Activity {
                 newUser.setConstellation(constellation.getText().toString());
 
 
-                final MyUser bmobUser =  BmobUser.getCurrentUser(UploadActivity.this,MyUser.class);
+                BmobUser bmobUser =  BmobUser.getCurrentUser(UploadActivity.this);
                 newUser.update(UploadActivity.this,bmobUser.getObjectId(),new UpdateListener() {
                     @Override
                     public void onSuccess() {
                         // TODO Auto-generated method stub
                         Toast.makeText(UploadActivity.this,"更新用户信息成功:",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(UploadActivity.this, MainpersonalActivity.class);
-
                         startActivity(intent);
                         finish();
                     }

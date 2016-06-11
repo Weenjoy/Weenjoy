@@ -45,9 +45,6 @@
             android:configChanges="orientation"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.df.dianping.DetailActivity"
-            android:configChanges="orientation" />
-        <activity
             android:name="com.df.dianping.CategoryActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
@@ -74,7 +71,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity
-            android:name="com.df.Search.Search_history"
+            android:name="com.df.Search.SearchHistory"
             android:label="@string/title_activity_search_history"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
@@ -99,11 +96,6 @@
         <activity
             android:name="com.df.Login.RegisterActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-        <activity
-            android:name="com.df.Login.CheckBaseActivity"
-            android:label="@string/title_activity_check_base"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
-        </activity>
         <activity
             android:name="com.df.Login.LoginActivity"
             android:label="@string/title_activity_login"

@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.df.DataBase.OperateTable;
+import com.df.DataBase.SearchHistoryDataBase;
 import com.df.GetDataFromNet.Getdata;
 import com.df.adapter.ShopListAdapter;
 import com.df.dianping.MainActivity;
@@ -41,6 +43,8 @@ public class Search extends Activity {
     private List<Map<String, Object>> datalist;
     private ShopListAdapter adapter;
     private LinearLayout loadinglayout;
+    private OperateTable table;
+    private SearchHistoryDataBase mDataBase;
     private Handler handler = new Handler() {
         public void handleMessage(Message message) {
             switch (message.what) {
@@ -125,6 +129,7 @@ public class Search extends Activity {
     }
 
     private void init() {
+        mDataBase = new SearchHistoryDataBase(this);
         list = (ListView) findViewById(R.id.search_list);
         back = (ImageView) findViewById(R.id.search_list_back);
         delete = (ImageView) findViewById(R.id.search_list_delete);
@@ -149,9 +154,11 @@ public class Search extends Activity {
         String c = text.getText().toString();
         if (c.equals(""))
             Toast.makeText(Search.this, "搜索内容不能为空", Toast.LENGTH_SHORT).show();
-        else if(!c.equals(content)) {
+        else if (!c.equals(content)) {
             content = c;
             loadinglayout.setVisibility(View.VISIBLE);
+            table = new OperateTable(mDataBase.getWritableDatabase(), 3);
+            table.insertSearchHistory(c);
             new Thread(new Runnable() {
                 @Override
                 public void run() {

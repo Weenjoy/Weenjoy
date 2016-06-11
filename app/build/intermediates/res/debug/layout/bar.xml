@@ -6,9 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:background="@color/yellow"
-        android:text="weenjoy"
+        android:text="Weenjoy"
         android:textColor="#FFFFFF"
         android:textSize="50px"
         android:gravity="center_vertical"/>
 
-</LinearLayout><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/bar.xml -->
+</LinearLayout><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/bar.xml -->

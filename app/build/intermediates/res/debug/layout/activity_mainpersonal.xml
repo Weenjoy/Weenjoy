@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/avatarImg"
-       android:layout_gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:text="点击登录"
         android:textColor="#000"
@@ -167,4 +167,4 @@
     </TableRow>
 
 </LinearLayout>
-<!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/activity_mainpersonal.xml -->
+<!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_mainpersonal.xml -->

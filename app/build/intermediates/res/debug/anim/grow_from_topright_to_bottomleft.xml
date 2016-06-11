@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <scale android:duration="@android:integer/config_shortAnimTime" android:pivotX="100.0%" android:pivotY="0.0%" android:fromXScale="0.3" android:toXScale="1.0" android:fromYScale="0.3" android:toYScale="1.0" />
     <alpha android:interpolator="@android:anim/decelerate_interpolator" android:duration="@android:integer/config_shortAnimTime" android:fromAlpha="0.0" android:toAlpha="1.0" />
-</set><!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/anim/grow_from_topright_to_bottomleft.xml -->
+</set><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/anim/grow_from_topright_to_bottomleft.xml -->

@@ -40,9 +40,7 @@
             android:name=".ResultActivity"
             android:configChanges="orientation"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-        <activity
-            android:name=".DetailActivity"
-            android:configChanges="orientation" />
+
         <activity
             android:name=".CategoryActivity"
             android:configChanges="orientation"
@@ -70,7 +68,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity
-            android:name="com.df.Search.Search_history"
+            android:name="com.df.Search.SearchHistory"
             android:label="@string/title_activity_search_history"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
@@ -99,11 +97,6 @@
             android:name="com.df.Login.RegisterActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
 
-        <activity
-            android:name="com.df.Login.CheckBaseActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:label="@string/title_activity_check_base" >
-        </activity>
         <activity
             android:name="com.df.Login.LoginActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar"

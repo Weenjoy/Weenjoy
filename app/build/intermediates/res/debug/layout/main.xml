@@ -15,16 +15,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
             android:text="Weenjoy"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#ffffffff"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_arrow_down"
-            android:textColor="#ffffffff"/>
     </LinearLayout>
 
 
@@ -112,4 +107,4 @@
                 android:theme="@android:style/Widget.ProgressBar.Inverse"/>
         </LinearLayout>
     </FrameLayout>
-</LinearLayout> <!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/layout/main.xml -->
+</LinearLayout> <!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/main.xml -->

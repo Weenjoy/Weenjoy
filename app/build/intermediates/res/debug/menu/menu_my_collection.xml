@@ -3,4 +3,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>
-<!-- From: file:/F:/Program%20Files/dianping/dianping/app/src/main/res/menu/menu_my_collection.xml -->
+<!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/menu/menu_my_collection.xml -->

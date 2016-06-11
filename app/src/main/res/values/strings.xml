@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, DianpingActivity!</string>
-    <string name="app_name">Dianping</string>
-    <string name="title_activity_web_view">WebView</string>
+    <string name="app_name">Weenjoy</string>
 
+    <string name="hello">Hello World, DianpingActivity!</string>
+    <string name="title_activity_web_view">WebView</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_my_collection">My_collection</string>
