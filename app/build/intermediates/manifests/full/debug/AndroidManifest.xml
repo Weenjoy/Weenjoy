@@ -45,14 +45,9 @@
             android:configChanges="orientation"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="com.df.dianping.CategoryActivity"
-            android:configChanges="orientation"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Light" />
-        <activity
             android:name="com.df.dianping.MainActivity"
             android:configChanges="orientation"
-            android:theme="@android:style/Theme.Light"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <service android:name="com.amap.api.location.APSService" />
@@ -78,11 +73,6 @@
         <activity
             android:name="com.df.Indent.MyIndentActivity"
             android:label="@string/title_activity_my_indent"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
-        </activity>
-        <activity
-            android:name="com.df.dianping.MainpersonalActivity"
-            android:label="@string/title_activity_mainpersonal"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity

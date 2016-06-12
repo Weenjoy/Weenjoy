@@ -77,7 +77,6 @@ public class WebViewActivity extends Activity {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         url = getIntent().getStringExtra("url");
-        //Log.i("url",url+" g");
         webView.loadUrl(url);
 
         collect.setOnClickListener(new View.OnClickListener() {

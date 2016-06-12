@@ -105,6 +105,7 @@ public class ResultActivity extends Activity implements OnClickListener {
         ID = getIntent().getIntExtra("ID", 0);
         typename = getIntent().getStringExtra("NAME");
         CATID = getIntent().getStringExtra("CATID");
+
         btnType.setText(typename);
         mShopList = new ArrayList<>();
 
@@ -115,12 +116,12 @@ public class ResultActivity extends Activity implements OnClickListener {
                 setButton(false);
                 //设置地点为所在地区
                 //开线程加载数据
-                btnArea.setText(MainActivity.GetDistract());
-                areaList = Getdata.getareaformjson(Getdata.arearequest("http://apis.baidu.com/baidunuomi/openapi/districts", "city_id=" + MainActivity.CITYCODE));
+                btnArea.setText(MainFragment.GetDistract());
+                areaList = Getdata.getareaformjson(Getdata.arearequest("http://apis.baidu.com/baidunuomi/openapi/districts", "city_id=" + MainFragment.CITYCODE));
                 areaAdapter = new AreaAdapter(ResultActivity.this, areaList);
 
                 for (int i = 0; i < areaList.size(); i++) {
-                    if (areaList.get(i).get("district_name").equals(MainActivity.GetDistract())) {
+                    if (areaList.get(i).get("district_name").equals(MainFragment.GetDistract())) {
                         DISTRACTID = areaList.get(i).get("district_id").toString();
                         before = i + 1;
                         flag = true;
@@ -134,7 +135,7 @@ public class ResultActivity extends Activity implements OnClickListener {
                 cateAdapter = new CateAdapter(ResultActivity.this, typeList);
 
 
-                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&distract_ids=" + DISTRACTID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
+                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&distract_ids=" + DISTRACTID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
                 shopList = Getdata.getshoplistformjson(shop);
                 shoplistadapter = new ShopListAdapter(ResultActivity.this, shopList);
 
@@ -190,7 +191,7 @@ public class ResultActivity extends Activity implements OnClickListener {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                mshop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=" + pageCount + "&page_size=5&deals_per_shop=10");
+                mshop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=" + pageCount + "&page_size=5&deals_per_shop=10");
                 if (!mshop.equals("")) {
                     mShopList = Getdata.getshoplistformjson(mshop);
                     for (int i = 0; i < mShopList.size(); i++) {
@@ -280,10 +281,10 @@ public class ResultActivity extends Activity implements OnClickListener {
     private void typechange(int which) {
         if (which == 0) {
             SUBCATID = "";
-            shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
+            shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
         } else {
             SUBCATID = typeList.get(which).get("subcat_id").toString();
-            shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
+            shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
         }
         shopList = Getdata.getshoplistformjson(shop);
         Message message = new Message();
@@ -380,21 +381,21 @@ public class ResultActivity extends Activity implements OnClickListener {
             //顶层
             if (which == 0) {
                 DISTRACTID = "";
-                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
+                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
             } else {
                 DISTRACTID = areaList.get(which - 1).get("district_id").toString();
-                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
+                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
             }
         } else {
             //底层
             if (which == 0) {
                 DISTRACTID = "";
                 bizareaId = "";
-                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
+                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
             } else {
                 List<Map<String, Object>> list = (List<Map<String, Object>>) areaList.get(before - 1).get("list");
                 bizareaId = list.get(which - 2).get("biz_area_id").toString();
-                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainActivity.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
+                shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&subcat_ids=" + SUBCATID + "&district_ids=" + DISTRACTID + "&bizarea_ids=" + bizareaId + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
             }
         }
         shopList = Getdata.getshoplistformjson(shop);

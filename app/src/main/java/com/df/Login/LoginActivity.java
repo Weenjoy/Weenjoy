@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.df.User.MyUser;
-import com.df.dianping.MainpersonalActivity;
+import com.df.dianping.MainPersonalFragment;
 import com.df.dianping.R;
 
 import cn.bmob.v3.BmobUser;
@@ -89,7 +89,7 @@ public class LoginActivity extends BaseActivity {
                         if (user != null) {
                             showLog("用户登陆成功");
                             showToast("用户登录成功");
-                            Intent intent=new Intent(LoginActivity.this, MainpersonalActivity.class);
+                            Intent intent=new Intent(LoginActivity.this, MainPersonalFragment.class);
                             String info=et_accout.getText().toString();
                             intent.putExtra("account",info);
                             intent.putExtra("isLogin", true);

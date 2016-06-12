@@ -1,14 +1,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.df.dianping.WebViewActivity">
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.df.dianping.WebViewActivity">
 
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
     <LinearLayout
         android:id="@+id/webview_loadinglayout"
         android:layout_width="match_parent"
@@ -23,68 +19,74 @@
             android:layout_gravity="center"
             android:text="加载中....."
             android:textColor="#000"
-            android:textSize="24sp" />
+            android:textSize="24sp"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="118dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:theme="@android:style/Widget.ProgressBar.Inverse" />
+            android:theme="@android:style/Widget.ProgressBar.Inverse"/>
 
     </LinearLayout>
-    <FrameLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:padding="10dp"
-        android:layout_gravity="top"
-        android:background="#D3D3D3">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/webview_back"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/back" />
 
-        <ImageView
-            android:id="@+id/webview_collect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginRight="80dp"
-             />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="top"
+            android:background="#D3D3D3"
+            android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/webview_traffic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:src="@drawable/traffic" />
-    </FrameLayout>
+            <ImageView
+                android:id="@+id/webview_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/back"/>
 
-    <RelativeLayout
-        android:id="@+id/rl_buy"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_gravity="center_horizontal|bottom"
-        android:background="@android:color/white"
-        android:visibility="invisible">
+            <ImageView
+                android:id="@+id/webview_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                />
 
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="立即抢购"
-            android:textColor="@android:color/white"
-            android:textSize="40px"
-            android:layout_marginRight="10dp"
-            android:id="@+id/btn_buy"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:background="@color/orange"
-            />
-    </RelativeLayout>
+        </FrameLayout>
 
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_buy"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/btn_buy"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@color/orange"
+                android:text="立即抢购"
+                android:textColor="@android:color/white"
+                android:textSize="40px"
+                />
+        </RelativeLayout>
+    </LinearLayout>
 
 </FrameLayout>
 <!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_web_view.xml -->

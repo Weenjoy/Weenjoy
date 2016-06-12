@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.df.User.MyUser;
-import com.df.dianping.MainpersonalActivity;
+import com.df.dianping.MainPersonalFragment;
 import com.df.dianping.R;
 
 
@@ -63,7 +63,7 @@ public class UploadActivity extends Activity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UploadActivity.this, MainpersonalActivity.class);
+                Intent intent = new Intent(UploadActivity.this, MainPersonalFragment.class);
                 startActivity(intent);
             }
         });
@@ -89,7 +89,7 @@ public class UploadActivity extends Activity {
                     public void onSuccess() {
                         // TODO Auto-generated method stub
                         Toast.makeText(UploadActivity.this,"更新用户信息成功:",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UploadActivity.this, MainpersonalActivity.class);
+                        Intent intent = new Intent(UploadActivity.this, MainPersonalFragment.class);
                         startActivity(intent);
                         finish();
                     }

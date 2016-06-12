@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources> 
+<resources>
+
     <style name="CustomChannelItem">
         <item name="android:background">@drawable/channel_bar</item>
     </style>
+
     <style name="CustomListItem">
         <item name="android:listSelector">@drawable/list_item</item>
     </style>
 
-     <style name="Theme.Dianping" parent="@android:style/Theme.Light">
+    <style name="Theme.Dianping" parent="@android:style/Theme.Light">
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowTitleSize">45.0dip</item>
         <item name="android:drawingCacheQuality">auto</item>
         <item name="android:listDivider">@color/listitem_divide</item>
     </style>
+
     <style name="Theme.DianpingNoTitle" parent="@style/Theme.Dianping">
         <item name="android:windowNoTitle">true</item>
     </style>
+
     <style name="Theme.DianpingNoTitle.CustomerBackground" parent="@style/Theme.DianpingNoTitle">
         <item name="android:windowBackground">@drawable/guidance_bg</item>
     </style>
-    
+
     <style name="CustomGridView" parent="@android:style/Widget.AbsListView">
         <item name="android:listSelector">@drawable/grid_selector_background</item>
     </style>
@@ -38,5 +42,6 @@
         <item name="android:windowTitleBackgroundStyle">@style/TitleBarBackground</item>
         <item name="android:windowTitleSize">47dp</item>
     </style>
-    
+
+
 </resources>

@@ -329,7 +329,7 @@ public class Getdata {
     /**
      * 解析商户列表
      */
-    public static List<Map<String, Object>>getshoplistformjson(String str)  {
+    public static List<Map<String, Object>> getshoplistformjson(String str) {
         List<Map<String, Object>> list = new ArrayList<>();
         try {
             JSONObject object = new JSONObject(str).getJSONObject("data");
@@ -345,13 +345,69 @@ public class Getdata {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                map.put("image_url",detail.getString("image"));
+                map.put("image_url", detail.getString("image"));
                 map.put("description", detail.getString("description"));
                 map.put("current_price", detail.getInt("current_price"));
                 map.put("deal_murl", detail.getString("deal_murl"));
                 list.add(map);
             }
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public static String todayShopList(String httpUrl, String httpArg) {
+        BufferedReader reader = null;
+        String result = null;
+        StringBuffer sbf = new StringBuffer();
+        httpUrl = httpUrl + "?" + httpArg;
+
+        try {
+            URL url = new URL(httpUrl);
+            HttpURLConnection connection = (HttpURLConnection) url
+                    .openConnection();
+            connection.setRequestMethod("GET");
+            // 填入apikey到HTTP header
+            connection.setRequestProperty("apikey", "30d9544095b66da7c2db36776ef56f0d");
+            connection.connect();
+            InputStream is = connection.getInputStream();
+            reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            String strRead = null;
+            while ((strRead = reader.readLine()) != null) {
+                sbf.append(strRead);
+                sbf.append("\r\n");
+            }
+            reader.close();
+            result = sbf.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static List<Map<String, Object>> getGoodsFromJson(String str) {
+        List<Map<String, Object>> list = new ArrayList<>();
+        try {
+            JSONObject object = new JSONObject(str).getJSONObject("data");
+            JSONArray array = object.getJSONArray("deals");
+            for (int i = 0; i < array.length(); i++) {
+                Map<String, Object> map = new HashMap<>();
+                JSONObject object1 = (JSONObject) array.get(i);
+                map.put("shop_id", object1.getString("deal_id"));
+                map.put("shop_name", object1.getString("title"));
+                map.put("description", object1.getString("description"));
+                map.put("current_price", object1.getString("promotion_price"));
+                map.put("deal_murl", object1.getString("deal_murl"));
+                map.put("image_url", object1.getString("image"));
+                try {
+                    map.put("tiny_image", getBitmap(object1.getString("image")));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                list.add(map);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

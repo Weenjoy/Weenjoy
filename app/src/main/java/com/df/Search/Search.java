@@ -23,7 +23,7 @@ import com.df.DataBase.OperateTable;
 import com.df.DataBase.SearchHistoryDataBase;
 import com.df.GetDataFromNet.Getdata;
 import com.df.adapter.ShopListAdapter;
-import com.df.dianping.MainActivity;
+import com.df.dianping.MainFragment;
 import com.df.dianping.R;
 import com.df.dianping.WebViewActivity;
 
@@ -169,7 +169,7 @@ public class Search extends Activity {
                         e.printStackTrace();
                     }
                     shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops",
-                            "city_id=" + MainActivity.CITYCODE + "&keyword=" + strUTF8 + "&page=1&page_size=10&deals_per_shop=10");
+                            "city_id=" + MainFragment.CITYCODE + "&keyword=" + strUTF8 + "&page=1&page_size=10&deals_per_shop=10");
                     datalist = Getdata.getshoplistformjson(shop);
                     Message message = new Message();
                     message.what = 1;
@@ -193,7 +193,7 @@ public class Search extends Activity {
                     e.printStackTrace();
                 }
                 shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops",
-                        "city_id=" + MainActivity.CITYCODE + "&keyword=" + strUTF8 + "&page=1&page_size=10&deals_per_shop=10");
+                        "city_id=" + MainFragment.CITYCODE + "&keyword=" + strUTF8 + "&page=1&page_size=10&deals_per_shop=10");
                 datalist = Getdata.getshoplistformjson(shop);
                 Message message = new Message();
                 message.what = 1;

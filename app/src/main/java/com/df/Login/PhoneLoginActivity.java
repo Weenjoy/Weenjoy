@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.df.User.MyUser;
-import com.df.dianping.MainpersonalActivity;
+import com.df.dianping.MainPersonalFragment;
 import com.df.dianping.R;
 
 import cn.bmob.v3.BmobSMS;
@@ -58,7 +58,7 @@ public class PhoneLoginActivity extends BaseActivity{
                         // TODO Auto-generated method stub
                         if (user != null) {
                             Log.i("smile", "用户登陆成功");
-                            Intent intent = new Intent(PhoneLoginActivity.this, MainpersonalActivity.class);
+                            Intent intent = new Intent(PhoneLoginActivity.this, MainPersonalFragment.class);
                             startActivity(intent);
                             finish();
                         }
