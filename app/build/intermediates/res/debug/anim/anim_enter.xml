@@ -14,4 +14,4 @@
         android:duration="@android:integer/config_mediumAnimTime"
         android:fromAlpha="0.0"
         android:toAlpha="1.0" />
-</set><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/anim/anim_enter.xml -->
+</set><!-- From: file:/C:/Users/Skygazer/Documents/GitHub/Weenjoy/app/src/main/res/anim/anim_enter.xml -->
