@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.df.dianping"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          android:versionCode="1"
-          android:versionName="1.0">
+<manifest
+    package="com.df.dianping"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -95,7 +96,8 @@
         </activity>
         <activity
             android:name="com.df.Login.PhoneLoginActivity"
-            android:label="@string/title_activity_phone_login">
+            android:label="@string/title_activity_phone_login"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
         </activity>
 
         <activity

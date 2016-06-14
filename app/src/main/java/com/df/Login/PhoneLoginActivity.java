@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.df.User.MyUser;
 import com.df.dianping.MainPersonalFragment;
@@ -21,26 +23,31 @@ import cn.bmob.v3.listener.RequestSMSCodeListener;
 /**
  * Created by Administrator on 2016/5/25.
  */
-public class PhoneLoginActivity extends BaseActivity{
+public class PhoneLoginActivity extends BaseActivity {
     protected Button but_sure;
     private Button but_send;
     protected EditText et_num;
     protected EditText et_check;
 
     private TimeCount time;
+
+    private ImageView back;
+    private TextView passWordLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_base);
 
+        back = (ImageView) findViewById(R.id.phone_login_in_back);
+        passWordLogin = (TextView) findViewById(R.id.phone_login_in_to_password);
+
+        et_check = (EditText) findViewById(R.id.et_check);
+        et_num = (EditText) findViewById(R.id.et_phone_num);
 
 
-        et_check=(EditText)findViewById(R.id.et_check);
-        et_num=(EditText)findViewById(R.id.et_phone_num);
-
-
-        but_send=(Button)findViewById(R.id.bn_send);
-        but_sure=(Button)findViewById(R.id.bn_sure);
+        but_send = (Button) findViewById(R.id.bn_send);
+        but_sure = (Button) findViewById(R.id.bn_sure);
 
         time = new TimeCount(60000, 1000);//构造CountDownTimer对象
 
@@ -89,7 +96,20 @@ public class PhoneLoginActivity extends BaseActivity{
         });
 
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
+        passWordLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PhoneLoginActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /* 定义一个倒计时的内部类 */

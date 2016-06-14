@@ -45,4 +45,6 @@
     <color name="base_end_color_pressed">#ffffa254</color>
     <color name="text_color_default">#ff000000</color>
     <color name="text_color_pressed">#ffffffff</color>
+
+    <color name="background_gray">#dcdcdc</color>
 </resources>
