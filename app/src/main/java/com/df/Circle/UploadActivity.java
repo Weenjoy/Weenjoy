@@ -1,10 +1,8 @@
 package com.df.Circle;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +11,7 @@ import android.widget.Toast;
 import com.df.User.MyUser;
 import com.df.dianping.MainPersonalFragment;
 import com.df.dianping.R;
+
 
 import java.util.List;
 
@@ -35,7 +34,6 @@ public class UploadActivity extends Activity {
     private EditText hometown;
     private EditText mailbox;
     private String account;
-    private Button signOut;
 
 
     @Override
@@ -43,7 +41,7 @@ public class UploadActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
 
-        nick = (EditText) findViewById(R.id.username);
+        nick= (EditText) findViewById(R.id.username);
         sex = (EditText) findViewById(R.id.sex);
         age = (EditText) findViewById(R.id.age);
         constellation = (EditText) findViewById(R.id.constellation);
@@ -56,28 +54,10 @@ public class UploadActivity extends Activity {
 
         subbmit = (Button) super.findViewById(R.id.subbmit);
         cancel = (Button) super.findViewById(R.id.cancel);
-        signOut = (Button) findViewById(R.id.upload_sign_out);
-
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new AlertDialog.Builder(UploadActivity.this).setTitle("确定要退出当前账号?")
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                BmobUser.logOut(UploadActivity.this);   //清除缓存用户对象
-                                Intent intent = new Intent();
-                                setResult(1, intent);
-                                finish();
-                            }
-                        }).setNegativeButton("取消", null);
-
-            }
-        });
 
 
-        Intent i = super.getIntent();
-        String account = i.getStringExtra("account");
+        Intent i=super.getIntent();
+        String account=i.getStringExtra("account");
 
 
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -103,21 +83,20 @@ public class UploadActivity extends Activity {
                 newUser.setConstellation(constellation.getText().toString());
 
 
-                BmobUser bmobUser = BmobUser.getCurrentUser(UploadActivity.this);
-                newUser.update(UploadActivity.this, bmobUser.getObjectId(), new UpdateListener() {
+                BmobUser bmobUser =  BmobUser.getCurrentUser(UploadActivity.this);
+                newUser.update(UploadActivity.this,bmobUser.getObjectId(),new UpdateListener() {
                     @Override
                     public void onSuccess() {
                         // TODO Auto-generated method stub
-                        Toast.makeText(UploadActivity.this, "更新用户信息成功:", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UploadActivity.this,"更新用户信息成功:",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(UploadActivity.this, MainPersonalFragment.class);
                         startActivity(intent);
                         finish();
                     }
-
                     @Override
                     public void onFailure(int code, String msg) {
                         // TODO Auto-generated method stub
-                        Toast.makeText(UploadActivity.this, "更新用户信息失败:" + msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UploadActivity.this,"更新用户信息失败:"+ msg,Toast.LENGTH_SHORT).show();
                     }
                 });
 

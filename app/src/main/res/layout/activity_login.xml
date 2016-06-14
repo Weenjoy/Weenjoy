@@ -1,132 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:padding="10dp">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginTop="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/login_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/back"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="登陆"
-                    android:textSize="20sp"/>
-            </FrameLayout>
-
-            <ImageView
-                android:id="@+id/login_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/sign"
-                />
-        </LinearLayout>
-    </FrameLayout>
-
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="100px"><include layout="@layout/bar"/></LinearLayout>
+
+    <TableLayout
+        android:id="@+id/TableLayout_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="280dp"
-            android:layout_height="wrap_content">
-
+        android:stretchColumns="1">
+        <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="账号："/>
-
             <EditText
                 android:id="@+id/et_accout"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="请输入账号"
                 android:singleLine="true"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
-
+        </TableRow>
+        <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="密码："/>
-
             <EditText
                 android:id="@+id/et_password"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="请输入密码"
-                android:password="true"
-                android:singleLine="true"/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/bn_login"
-            android:layout_width="280dp"
+                android:singleLine="true"
+                android:password="true"/>
+        </TableRow>
+    </TableLayout>
+    <RelativeLayout
+        android:id="@+id/Layout_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_return"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="找回密码"/>
+        <TextView
+            android:id="@+id/tv_fast_login"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="登录"/>
-
-        <FrameLayout
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            >
-
-            <TextView
-                android:id="@+id/tv_return"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:text="忘记密码"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:id="@+id/tv_fast_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="手机快速登录"
-                android:textSize="20sp"/>
-        </FrameLayout>
-
-    </LinearLayout>
-
+            android:layout_alignParentRight="true"
+            android:text="手机快速登录"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/bn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Layout_2"
+        android:text="登录"/>
     <TextView
         android:id="@+id/tv_register"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:text="新用户？点这里"
-        android:textSize="24sp"/>
+        android:layout_below="@id/bn_login"
+        android:text="----------注册一个账号----------"
+        android:gravity="center"
+        android:textSize="50px"/>
 
-</FrameLayout>
+</LinearLayout>

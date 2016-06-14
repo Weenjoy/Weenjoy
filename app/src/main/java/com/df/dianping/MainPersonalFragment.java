@@ -23,7 +23,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,8 +33,6 @@ import com.df.Circle.FileUtil;
 import com.df.Circle.NetUtil;
 import com.df.Circle.SelectPicPopupWindow;
 import com.df.Circle.UploadActivity;
-import com.df.Collect.Mycollection;
-import com.df.Indent.MyIndentActivity;
 import com.df.Login.LoginActivity;
 import com.df.User.MyUser;
 
@@ -57,13 +56,17 @@ import cn.bmob.v3.listener.FindListener;
 public class MainPersonalFragment extends Fragment implements OnClickListener {
 
 
+    private ImageView back;
     private Context mContext;
     private CircleImg avatarImg;   //头像图片
+    private Button editButton;
     private SelectPicPopupWindow menuWindow;  //自定义的头像编辑弹出框
     private TextView usertxt;
 
+    private TextView account;
     private String account2 = "";
 
+    private Button quitButton;
 
     //上传服务器的路径【一般不硬编码到程序中】
     private String imgUrl = "";
@@ -76,11 +79,6 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
     private static final int REQUESTCODE_CUTTING = 2;     //图片裁切标记
     private View view;
     private MyUser userInfo;
-    private LinearLayout collection;
-    private LinearLayout order;
-    private LinearLayout personalInfo;
-    private static int REQUEST_CODE = 1000;
-
 
     @Nullable
     @Override
@@ -91,9 +89,9 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
             userInfo = BmobUser.getCurrentUser(mContext, MyUser.class);
             initViews();
             if (userInfo != null) {
-//                quitButton.setClickable(true);
+                quitButton.setClickable(true);
                 account2 = userInfo.getUsername();
-//                account.setText(account2);
+                account.setText(account2);
                 usertxt.setText("昵称");
 
                 BmobQuery<MyUser> query = new BmobQuery<MyUser>();
@@ -103,7 +101,7 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
                     public void onSuccess(List<MyUser> object) {
                         // TODO Auto-generated method stub
                         usertxt.setText(object.get(0).getNick());
-//                        account.setText(object.get(0).getUsername());
+                        account.setText(object.get(0).getUsername());
                     }
 
                     @Override
@@ -113,7 +111,7 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
                     }
                 });
             } else {
-
+                quitButton.setClickable(false);
             }
 
         }
@@ -125,16 +123,12 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
      * 初始化页面控件
      */
     private void initViews() {
-
-        collection = (LinearLayout) view.findViewById(R.id.personal_collect_layout);
-        order = (LinearLayout) view.findViewById(R.id.personal_order_layout);
-        personalInfo = (LinearLayout) view.findViewById(R.id.personal_info_layout);
-
         avatarImg = (CircleImg) view.findViewById(R.id.avatarImg);
-//        editButton = (Button) view.findViewById(R.id.Edit);
+        editButton = (Button) view.findViewById(R.id.Edit);
+        back = (ImageView) view.findViewById(R.id.iv_indent_back);
         usertxt = (TextView) view.findViewById(R.id.userNameTxt);
-//        account = (TextView) view.findViewById(R.id.account);
-//        quitButton = (Button) view.findViewById(R.id.bt_quit);
+        account = (TextView) view.findViewById(R.id.account);
+        quitButton = (Button) view.findViewById(R.id.bt_quit);
         usertxt.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,41 +139,9 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
             }
         });
         avatarImg.setOnClickListener(this);
-//        editButton.setOnClickListener(this);
-//        quitButton.setOnClickListener(this);
-
-        collection.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (userInfo != null) {
-                    Intent intent = new Intent(view.getContext(), Mycollection.class);
-                    startActivity(intent);
-                } else
-                    Toast.makeText(mContext, "请先登陆", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        order.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (userInfo != null) {
-                    Intent intent = new Intent(view.getContext(), MyIndentActivity.class);
-                    startActivity(intent);
-                } else
-                    Toast.makeText(mContext, "请先登陆", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        personalInfo.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (userInfo != null) {
-                    Intent intent = new Intent(view.getContext(), UploadActivity.class);
-                    startActivityForResult(intent, REQUEST_CODE);
-                } else
-                    Toast.makeText(mContext, "请先登陆", Toast.LENGTH_SHORT).show();
-            }
-        });
+        editButton.setOnClickListener(this);
+        back.setOnClickListener(this);
+        quitButton.setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -194,32 +156,32 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
                 }
                 break;
 
-//            case R.id.Edit:   //信息编辑点击事件
-//                if (userInfo != null) {
-//                    Intent it = new Intent(mContext, UploadActivity.class);
-//                    String info = account2;
-//                    it.putExtra("account", info);
-//                    startActivity(it);
-//                } else {
-//                    Toast.makeText(mContext, "请先登录", Toast.LENGTH_SHORT).show();
-//                }
-//                break;
+            case R.id.Edit:   //信息编辑点击事件
+                if (userInfo != null) {
+                    Intent it = new Intent(mContext, UploadActivity.class);
+                    String info = account2;
+                    it.putExtra("account", info);
+                    startActivity(it);
+                } else {
+                    Toast.makeText(mContext, "请先登录", Toast.LENGTH_SHORT).show();
+                }
+                break;
 
             case R.id.iv_indent_back://返回界面
                 startActivity(new Intent(mContext, MainActivity.class));
                 break;
-//            case R.id.bt_quit:
-//
-//                Intent it = new Intent(mContext, LoginActivity.class);
-//                String info = account2;
-//
-//                BmobUser.logOut(mContext);   //清除缓存用户对象
-//                BmobUser currentUser = BmobUser.getCurrentUser(mContext); // 现在的currentUser是null了
-//
-//                it.putExtra("account", info);
-//                startActivity(it);
-//
-//                break;
+            case R.id.bt_quit:
+
+                Intent it = new Intent(mContext, LoginActivity.class);
+                String info = account2;
+
+                BmobUser.logOut(mContext);   //清除缓存用户对象
+                BmobUser currentUser = BmobUser.getCurrentUser(mContext); // 现在的currentUser是null了
+
+                it.putExtra("account", info);
+                startActivity(it);
+
+                break;
 
             default:
                 break;
@@ -256,27 +218,23 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE && resultCode == 1) {
-            usertxt.setText("点击登录");
-            usertxt.setEnabled(true);
-        } else {
-            switch (requestCode) {
-                case REQUESTCODE_PICK:// 直接从相册获取
-                    try {
-                        startPhotoZoom(data.getData());
-                    } catch (NullPointerException e) {
-                        e.printStackTrace();// 用户点击取消操作
-                    }
-                    break;
-                case REQUESTCODE_TAKE:// 调用相机拍照
-                    File temp = new File(Environment.getExternalStorageDirectory() + "/" + IMAGE_FILE_NAME);
-                    startPhotoZoom(Uri.fromFile(temp));
-                    break;
-                case REQUESTCODE_CUTTING:// 取得裁剪后的图片
-                    if (data != null) {
-                        setPicToView(data);
-                    }
-                    break;
+        switch (requestCode) {
+            case REQUESTCODE_PICK:// 直接从相册获取
+                try {
+                    startPhotoZoom(data.getData());
+                } catch (NullPointerException e) {
+                    e.printStackTrace();// 用户点击取消操作
+                }
+                break;
+            case REQUESTCODE_TAKE:// 调用相机拍照
+                File temp = new File(Environment.getExternalStorageDirectory() + "/" + IMAGE_FILE_NAME);
+                startPhotoZoom(Uri.fromFile(temp));
+                break;
+            case REQUESTCODE_CUTTING:// 取得裁剪后的图片
+                if (data != null) {
+                    setPicToView(data);
+                }
+                break;
 //            case 100:
 //                if (resultCode == RESULT_OK) {
 //                    account2 = data.getStringExtra("account");
@@ -284,8 +242,8 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
 //                    account.setText(account2);
 //                    usertxt.setText("昵称");
 //                }
-            }
         }
+
     }
 
     /**
