@@ -2,4 +2,4 @@
 <shape
   xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient android:startColor="#ffff7a13" android:endColor="#ffffa254" android:angle="270.0" android:centerColor="#ffff8c2f" />
-</shape><!-- From: file:/C:/Users/Skygazer/Documents/GitHub/Weenjoy/app/src/main/res/drawable-mdpi/list_item_selected_color.xml -->
+</shape><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/drawable-mdpi/list_item_selected_color.xml -->

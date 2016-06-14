@@ -1,219 +1,259 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context="com.df.Circle.UploadActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="10dp"
+              tools:context="com.df.Circle.UploadActivity">
 
     <FrameLayout
-        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="50dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/upload_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="编辑资料"
-            android:textSize="24sp" />
+            android:text="个人资料"
+            android:textSize="24sp"/>
     </FrameLayout>
 
-    <TableRow
-        android:id="@+id/row1"
-        android:layout_below="@id/title"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="昵称"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/username"
+        android:layout_height="1dp"
+        android:background="@color/background_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="年龄"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="星座"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/constellation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="职业"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/profession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="学校"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="所在地"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="故乡"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/hometown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邮箱"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/mailbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
-    </TableRow>
+            <Button
+                android:id="@+id/subbmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="保存"/>
 
-    <TableRow
-        android:id="@+id/row2"
-        android:layout_below="@id/row1"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="性别"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/sex"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row3"
-        android:layout_below="@id/row2"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="年龄"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row4"
-        android:layout_below="@id/row3"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="星座"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/constellation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row5"
-        android:layout_below="@id/row4"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginTop="30dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="职业"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/profession"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row6"
-        android:layout_below="@id/row5"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="学校"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/school"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row7"
-        android:layout_below="@id/row6"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="所在地"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="25dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row8"
-        android:layout_below="@id/row7"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="故乡"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/hometown"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row9"
-        android:layout_below="@id/row8"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="邮箱"
-            android:textSize="20dp"/>
-        <EditText
-            android:id="@+id/mailbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:layout_marginLeft="45dp"/>
-
-    </TableRow>
-
-    <TableRow
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_alignParentBottom="true">
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="取消"/>
+        </LinearLayout>
 
         <Button
-            android:id="@+id/subbmit"
+            android:id="@+id/upload_sign_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="保存" />
-        <Button
-            android:id="@+id/cancel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="取消"/>
-
-
-    </TableRow>
-
-</RelativeLayout>
-<!-- From: file:/C:/Users/Skygazer/Documents/GitHub/Weenjoy/app/src/main/res/layout/activity_upload.xml -->
+            android:layout_marginTop="5dp"
+            android:text="退出当前账号"/>
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_upload.xml -->

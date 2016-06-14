@@ -17,7 +17,8 @@ public class RegisterActivity extends ResetPasswordActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-    protected void OnSure_ClickListene(){
+
+    protected void OnSure_ClickListene() {
         but_sure.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if (et_re_password.getText().toString().isEmpty() || et_agian_password.getText().toString().isEmpty())
@@ -37,11 +38,11 @@ public class RegisterActivity extends ResetPasswordActivity {
                     public void onSuccess() {
                         // TODO Auto-generated method stub
                         toast("注册成功");
-                        Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
-                        String info=et_num.getText().toString();
-                        intent.putExtra("account",info);
-                        String info1=et_re_password.getText().toString();
-                        intent.putExtra("pass",info1);
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        String info = et_num.getText().toString();
+                        intent.putExtra("account", info);
+                        String info1 = et_re_password.getText().toString();
+                        intent.putExtra("pass", info1);
                         startActivity(intent);
                         finish();
                     }

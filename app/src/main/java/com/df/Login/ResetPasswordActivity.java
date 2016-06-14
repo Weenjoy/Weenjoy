@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.df.dianping.R;
 
@@ -29,11 +30,14 @@ public class ResetPasswordActivity extends BaseActivity {
     protected EditText et_agian_password;
 
     private TimeCount time;
+    private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
+
+        back= (ImageView) findViewById(R.id.register_back);
 
         et_re_password=(EditText)findViewById(R.id.et_re_password);
         et_agian_password=(EditText)findViewById(R.id.et_again_password);
@@ -69,6 +73,12 @@ public class ResetPasswordActivity extends BaseActivity {
         });
 
         OnSure_ClickListene();
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
