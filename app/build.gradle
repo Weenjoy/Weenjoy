@@ -23,7 +23,6 @@ dependencies {
     compile 'com.android.support:support-v4:22.2.1'
     compile 'com.android.support:design:22.2.0'
     compile 'com.eftimoff:android-pathview:1.0.8@aar'
-    compile 'de.hdodenhof:circleimageview:2.0.0'
 
     compile 'com.squareup.okio:okio:1.4.0'
     compile files('libs/BmobSDK_V3.4.6_0415.jar')

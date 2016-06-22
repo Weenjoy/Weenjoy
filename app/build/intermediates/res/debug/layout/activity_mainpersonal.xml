@@ -8,18 +8,6 @@
     android:padding="10dp"
     tools:context="com.df.dianping.MainPersonalFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="我的"
-        android:textSize="24sp"/>
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/light_gray"/>
 
     <com.df.Circle.CircleImg
         android:id="@+id/avatarImg"
@@ -67,6 +55,12 @@
             android:textSize="18sp"/>
     </LinearLayout>
 
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"/>
+
     <LinearLayout
         android:id="@+id/personal_collect_layout"
         android:layout_width="match_parent"
@@ -93,11 +87,12 @@
     </LinearLayout>
 
 
+
     <LinearLayout
         android:id="@+id/personal_order_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
         android:background="@color/background_gray"
         android:orientation="horizontal"
         android:padding="5dp">
