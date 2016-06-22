@@ -39,7 +39,7 @@ public class PhoneLoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_base);
 
-       // back = (ImageView) findViewById(R.id.phone_login_in_back);
+        back = (ImageView) findViewById(R.id.phone_login_in_back);
         passWordLogin = (TextView) findViewById(R.id.phone_login_in_to_password);
 
         et_check = (EditText) findViewById(R.id.et_check);
@@ -96,17 +96,18 @@ public class PhoneLoginActivity extends BaseActivity {
         });
 
 
-//        back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         passWordLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               finish();
+                Intent intent = new Intent(PhoneLoginActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

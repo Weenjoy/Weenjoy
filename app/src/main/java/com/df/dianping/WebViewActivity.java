@@ -2,7 +2,6 @@ package com.df.dianping;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -54,39 +53,31 @@ public class WebViewActivity extends Activity {
         else
             collect.setImageResource(R.drawable.collect_after);
 
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        url = getIntent().getStringExtra("url");
-
-
         webView.setWebViewClient(new WebViewClient() {
-
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (url.startsWith("http:") || url.startsWith("https:")) {
-                    view.loadUrl(url);
-                }
+            public boolean shshouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
                 return true;
             }
 
             @Override
             public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                Log.d("xxxx", "onPageFinished ");
+                //开始
                 rlBuy.setVisibility(View.VISIBLE);
                 loadinglayout.setVisibility(View.GONE);
+                super.onPageFinished(view, url);
+
             }
-
         });
-
-        webView.loadUrl(url);
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        url = getIntent().getStringExtra("url");
+        webView.loadUrl(url);
 
         collect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,4 +118,6 @@ public class WebViewActivity extends Activity {
             }
         });
     }
+
+
 }

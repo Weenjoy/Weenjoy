@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.df.User.MyUser;
@@ -23,7 +24,7 @@ public class LoginActivity extends BaseActivity {
     private TextView tv_register;
     private TextView tv_fast_login;
     private TextView tv_return;
-   // private ImageView back;
+    private ImageView back;
 
     private Button bt_login;
 
@@ -35,7 +36,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-      //  back = (ImageView) findViewById(R.id.login_back);
+        back = (ImageView) findViewById(R.id.login_back);
         et_accout = (EditText) findViewById(R.id.et_accout);
         et_password = (EditText) findViewById(R.id.et_password);
 
@@ -106,12 +107,12 @@ public class LoginActivity extends BaseActivity {
                 });
             }
         });
-      //  back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 

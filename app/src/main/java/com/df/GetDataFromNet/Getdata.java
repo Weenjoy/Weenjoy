@@ -2,7 +2,6 @@ package com.df.GetDataFromNet;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -426,15 +425,7 @@ public class Getdata {
         if (connection.getResponseCode() == 200) {
             InputStream inputStream = connection.getInputStream();
             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-            if (bitmap.getWidth() != 356 || bitmap.getHeight() != 225) {
-                float swidth = ((float) 356) / bitmap.getWidth();
-                float sheight = ((float) 225) / bitmap.getHeight();
-                Matrix matrix = new Matrix();
-                matrix.postScale(swidth, sheight);
-                Bitmap nbigmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                return nbigmap;
-            } else
-                return bitmap;
+            return bitmap;
         }
         return null;
 
