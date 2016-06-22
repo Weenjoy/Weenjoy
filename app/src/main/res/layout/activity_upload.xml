@@ -1,15 +1,15 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:padding="10dp"
-              tools:context="com.df.Circle.UploadActivity">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:padding="10dp"
+             tools:context="com.df.Circle.UploadActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        >
 
         <ImageView
             android:id="@+id/upload_back"
@@ -23,18 +23,15 @@
             android:layout_gravity="center"
             android:text="个人资料"
             android:textSize="24sp"/>
+
     </FrameLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/background_gray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_weight="9"
         android:orientation="vertical">
 
         <LinearLayout
@@ -227,32 +224,42 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="20dp"
+            >
 
             <Button
                 android:id="@+id/subbmit"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="保存"/>
+                android:background="@drawable/save_btn_style"
+                android:padding="10dp"
+                android:text="保存"
+                android:textColor="#fff"/>
 
             <Button
                 android:id="@+id/cancel"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="取消"/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/upload_sign_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="退出当前账号"/>
+                android:layout_gravity="right"
+                android:background="@drawable/cancel_btn_style"
+                android:padding="10dp"
+                android:text="取消"
+                android:textColor="#fff"/>
+        </FrameLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <Button
+        android:id="@+id/upload_sign_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/sign_out_btn_style"
+        android:padding="10dp"
+        android:text="退出当前账号"
+        android:textColor="#fff"
+        android:textSize="20sp"/>
+</FrameLayout>

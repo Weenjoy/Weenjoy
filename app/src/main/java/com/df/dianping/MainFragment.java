@@ -47,7 +47,7 @@ public class MainFragment extends Fragment {
     private String[] name = {"生活服务", "休闲娱乐", "美食", "网购", "酒店旅游", "上门服务", "演出赛事", "充值缴费", "汽车后服务", "其他"};
     private int[] imageId = {R.drawable.life, R.drawable.happy, R.drawable.food,
             R.drawable.shopping, R.drawable.hotel, R.drawable.beauty,
-            R.drawable.sports, R.drawable.wedding, R.drawable.baby, R.drawable.icon};
+            R.drawable.sports, R.drawable.wedding, R.drawable.baby, R.drawable.other};
     private int[] catId = {316, 320, 326, 330, 377, 963, 970, 990, 1010, 323};
     private LinearLayout loadingLayout, loadLayout;
 

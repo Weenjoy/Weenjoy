@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#FD8910"/>
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#dcdcdc"/>
+        </shape>
+    </item>
+</selector><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/drawable/sure_btn_style.xml -->
