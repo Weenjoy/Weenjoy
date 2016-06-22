@@ -131,9 +131,9 @@ public class ResultActivity extends Activity implements OnClickListener {
 
                 String str = Getdata.shoptyperequest("http://apis.baidu.com/baidunuomi/openapi/categories", "");
                 mList = Getdata.getshoptypefromjson(str);
-                typeList = getList((List<Map<String, Object>>) mList.get(ID - 1).get("list"));
-                cateAdapter = new CateAdapter(ResultActivity.this, typeList);
 
+                typeList = getList((List<Map<String, Object>>) mList.get(ID).get("list"));
+                cateAdapter = new CateAdapter(ResultActivity.this, typeList);
 
                 shop = Getdata.shoplistrequest("http://apis.baidu.com/baidunuomi/openapi/searchshops", "city_id=" + MainFragment.CITYCODE + "&cat_ids=" + CATID + "&distract_ids=" + DISTRACTID + "&radius=3000&page=1&page_size=10&deals_per_shop=10");
                 shopList = Getdata.getshoplistformjson(shop);

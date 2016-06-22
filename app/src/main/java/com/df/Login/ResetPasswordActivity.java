@@ -37,7 +37,7 @@ public class ResetPasswordActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
 
-        back= (ImageView) findViewById(R.id.register_back);
+     //   back= (ImageView) findViewById(R.id.register_back);
 
         et_re_password=(EditText)findViewById(R.id.et_re_password);
         et_agian_password=(EditText)findViewById(R.id.et_again_password);
@@ -73,12 +73,12 @@ public class ResetPasswordActivity extends BaseActivity {
         });
 
         OnSure_ClickListene();
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+      //  back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                finish();
+//            }
+//        });
 
     }
 
