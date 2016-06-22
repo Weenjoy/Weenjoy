@@ -2,41 +2,6 @@
 <items version="2" >
 
     <item
-        jar="F:\AndroidStudioProject\dianping\app\libs\BmobSDK_V3.4.6_0415.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="41f54bb2846705eea0de5df48ddbcba378bd54e5">
-        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\BmobSDK_V3.4.6_0415-8c583033a2a38bc47db1adc56aae8f00c677e796.jar" />
-    </item>
-    <item
-        jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-1f39bb3bd3aed2fd8d0151804b6aa421a99f3d4f.jar" />
-    </item>
-    <item
-        jar="C:\Users\asus88\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
-        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\okio-1.4.0-6b2267b7019c2867abd99e75758d5560a90e89b5.jar" />
-    </item>
-    <item
-        jar="F:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-9201b775a31c5b0e6c633c38f75a7682f488df33.jar" />
-    </item>
-    <item
-        jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\com.eftimoff\android-pathview\1.0.8\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="88c68c6a96cb202c8974833c319dc4a340f29b7e">
-        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\classes-0b27774f22bd6d01d5958f69ab586b714d7b6189.jar" />
-    </item>
-    <item
         jar="F:\AndroidStudioProject\dianping\app\AMap_Location_V2.4.0_20160308.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -49,6 +14,62 @@
         revision="22.0.1"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
         <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\classes-61c37e0ef6934c2ed0b0be74971ebc60e657fbc9.jar" />
+    </item>
+    <item
+        jar="C:\Users\asus88\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\okio-1.4.0-6b2267b7019c2867abd99e75758d5560a90e89b5.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\classes-e4866a3ef790fdcc08a69b015f40d37439a17134.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProject\dianping\app\libs\okhttp-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0-ba9e13b5e380895151a96ebd3b70b276b70cd71a.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\com.eftimoff\android-pathview\1.0.8\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="88c68c6a96cb202c8974833c319dc4a340f29b7e">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\classes-0b27774f22bd6d01d5958f69ab586b714d7b6189.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\com.eftimoff\android-pathview\1.0.8\jars\libs\androidsvg-1.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d0cb3453e18fffeb053e9b7f052af3dcec9f75b4">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\androidsvg-1.2.1-9ddb64d6a5390567f0b9761f61a3d21927ca08d0.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProject\dianping\app\libs\BmobSDK_V3.4.6_0415.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="41f54bb2846705eea0de5df48ddbcba378bd54e5">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\BmobSDK_V3.4.6_0415-8c583033a2a38bc47db1adc56aae8f00c677e796.jar" />
+    </item>
+    <item
+        jar="F:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-9201b775a31c5b0e6c633c38f75a7682f488df33.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-1f39bb3bd3aed2fd8d0151804b6aa421a99f3d4f.jar" />
     </item>
     <item
         jar="F:\AndroidStudioProject\dianping\app\ApiStoreSDK1.0.4.jar"
@@ -65,25 +86,11 @@
         <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\classes-030c6b723a819cc45fb40b851ad02e1c80a510f4.jar" />
     </item>
     <item
-        jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\com.eftimoff\android-pathview\1.0.8\jars\libs\androidsvg-1.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d0cb3453e18fffeb053e9b7f052af3dcec9f75b4">
-        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\androidsvg-1.2.1-9ddb64d6a5390567f0b9761f61a3d21927ca08d0.jar" />
-    </item>
-    <item
         jar="F:\AndroidStudioProject\dianping\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
         <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\classes-c042e5cfefe1846efe38e4c1d6dbc245063c9307.jar" />
-    </item>
-    <item
-        jar="F:\AndroidStudioProject\dianping\app\libs\okhttp-2.4.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
-        <dex dex="F:\AndroidStudioProject\dianping\app\build\intermediates\pre-dexed\debug\okhttp-2.4.0-ba9e13b5e380895151a96ebd3b70b276b70cd71a.jar" />
     </item>
 
 </items>
