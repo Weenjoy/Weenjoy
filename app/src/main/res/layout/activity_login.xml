@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             android:background="@drawable/background"
              android:padding="10dp">
 
     <FrameLayout
@@ -15,23 +16,24 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
 
-                <ImageView
-                    android:id="@+id/login_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/back"/>
+            <!--<ImageView-->
+            <!--android:id="@+id/login_back"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/back"/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="登陆"
-                    android:textSize="20sp"/>
-            </FrameLayout>
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="登陆"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textSize="20sp"/>-->
+            <!--</FrameLayout>-->
 
             <ImageView
                 android:id="@+id/login_logo"
@@ -39,7 +41,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/sign"
+                android:src="@drawable/signin"
                 />
         </LinearLayout>
     </FrameLayout>
@@ -59,14 +61,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="账号："/>
+                android:text="账号："
+                android:textColor="#fff"/>
 
             <EditText
                 android:id="@+id/et_accout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="请输入账号"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout
@@ -78,7 +82,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="密码："/>
+                android:text="密码："
+                android:textColor="#fff"/>
 
             <EditText
                 android:id="@+id/et_password"
@@ -86,15 +91,20 @@
                 android:layout_height="wrap_content"
                 android:hint="请输入密码"
                 android:password="true"
-                android:singleLine="true"/>
+                android:singleLine="true"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <Button
             android:id="@+id/bn_login"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="登录"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sure_btn_style"
+            android:padding="10dp"
+            android:text="登录"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
 
         <FrameLayout
             android:layout_width="280dp"
@@ -108,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:text="忘记密码"
+                android:textColor="#dcdcdc"
                 android:textSize="20sp"/>
 
             <TextView
@@ -116,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="手机快速登录"
+                android:textColor="#fff"
                 android:textSize="20sp"/>
         </FrameLayout>
 
@@ -127,6 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:text="新用户？点这里"
-        android:textSize="24sp"/>
+        android:textColor="#fff"
+        android:textSize="20sp"/>
 
 </FrameLayout>
