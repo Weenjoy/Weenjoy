@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:hint="请输入手机号"
                 android:singleLine="true"
-                android:textColor="#fff"/>
+                />
 
 
             <Button
@@ -88,8 +88,7 @@
                 android:layout_height="wrap_content"
                 android:hint="请输入验证码"
                 android:singleLine="true"
-
-                android:textColor="#fff"/>
+                />
         </LinearLayout>
 
         <Button
