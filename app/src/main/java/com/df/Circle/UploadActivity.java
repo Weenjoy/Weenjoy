@@ -70,7 +70,8 @@ public class UploadActivity extends Activity {
                                 setResult(1, intent);
                                 finish();
                             }
-                        }).setNegativeButton("取消", null).show();
+                        }).setNegativeButton("取消", null);
+
             }
         });
 

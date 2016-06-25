@@ -90,38 +90,36 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
             mContext = view.getContext();
             userInfo = BmobUser.getCurrentUser(mContext, MyUser.class);
             initViews();
-            UpdateUserInfo();
+            if (userInfo != null) {
+//                quitButton.setClickable(true);
+                account2 = userInfo.getUsername();
+//                account.setText(account2);
+                usertxt.setText("昵称");
+
+                BmobQuery<MyUser> query = new BmobQuery<MyUser>();
+                query.addWhereEqualTo("username", account2);
+                query.findObjects(mContext, new FindListener<MyUser>() {
+                    @Override
+                    public void onSuccess(List<MyUser> object) {
+                        // TODO Auto-generated method stub
+                        usertxt.setText(object.get(0).getNick());
+//                        account.setText(object.get(0).getUsername());
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        // TODO Auto-generated method stub
+                        Toast.makeText(mContext, "查询用户失败：" + msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
+
+            }
 
         }
         return view;
     }
-    private void UpdateUserInfo(){
-        if (userInfo != null) {
-//                quitButton.setClickable(true);
-            account2 = userInfo.getUsername();
-//                account.setText(account2);
-            usertxt.setText("昵称");
 
-            BmobQuery<MyUser> query = new BmobQuery<MyUser>();
-            query.addWhereEqualTo("username", account2);
-            query.findObjects(mContext, new FindListener<MyUser>() {
-                @Override
-                public void onSuccess(List<MyUser> object) {
-                    // TODO Auto-generated method stub
-                    usertxt.setText(object.get(0).getNick());
-//                        account.setText(object.get(0).getUsername());
-                }
-
-                @Override
-                public void onError(int code, String msg) {
-                    // TODO Auto-generated method stub
-                    Toast.makeText(mContext, "查询用户失败：" + msg, Toast.LENGTH_SHORT).show();
-                }
-            });
-        } else {
-
-        }
-    }
 
     /**
      * 初始化页面控件
@@ -142,7 +140,7 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
             public void onClick(View view) {
                 if (userInfo == null) {
                     Intent intent = new Intent(mContext, LoginActivity.class);
-                    startActivityForResult(intent, 1234);
+                    startActivity(intent);
                 }
             }
         });
@@ -261,9 +259,6 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
         if (requestCode == REQUEST_CODE && resultCode == 1) {
             usertxt.setText("点击登录");
             usertxt.setEnabled(true);
-        } else if (requestCode == 1234 && resultCode == 2) {
-            userInfo = BmobUser.getCurrentUser(mContext, MyUser.class);
-            UpdateUserInfo();
         } else {
             switch (requestCode) {
                 case REQUESTCODE_PICK:// 直接从相册获取
@@ -290,9 +285,7 @@ public class MainPersonalFragment extends Fragment implements OnClickListener {
 //                    usertxt.setText("昵称");
 //                }
             }
-
         }
-
     }
 
     /**
