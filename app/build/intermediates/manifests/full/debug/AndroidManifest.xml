@@ -25,7 +25,9 @@
         android:label="@string/app_name" >
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="a3b218edca7920239cd07283e9dc37e1" >
+            android:value="a5fa3ffc63fbbab28af9038cce0da1ac" >
+
+            <!-- android:value="a3b218edca7920239cd07283e9dc37e1" -->
             //开发者申请的key
         </meta-data>
 

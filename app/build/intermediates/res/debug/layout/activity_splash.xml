@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <com.df.dianping.MyVideoView
+        android:id="@+id/vv_start"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:padding="2dp"
+        android:id="@+id/bt_jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btjump"
+        android:layout_gravity="right|top"
+        android:text="跳过"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"/>
+</FrameLayout>
+<!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/app/src/main/res/layout/activity_splash.xml -->

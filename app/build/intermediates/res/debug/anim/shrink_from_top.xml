@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <scale android:duration="@android:integer/config_shortAnimTime" android:pivotX="50.0%" android:pivotY="100.0%" android:fromXScale="1.0" android:toXScale="0.3" android:fromYScale="1.0" android:toYScale="0.3" />
     <alpha android:interpolator="@android:anim/accelerate_interpolator" android:duration="@android:integer/config_shortAnimTime" android:fromAlpha="1.0" android:toAlpha="0.0" />
-</set><!-- From: file:/C:/Users/Skygazer/Documents/GitHub/Weenjoy/app/src/main/res/anim/shrink_from_top.xml -->
+</set><!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/app/src/main/res/anim/shrink_from_top.xml -->

@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             android:background="#fff"
              android:orientation="vertical">
 
     <ImageView
@@ -40,4 +41,4 @@
             android:theme="@android:style/Widget.ProgressBar.Inverse"/>
 
     </LinearLayout>
-</FrameLayout><!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_tab_all.xml -->
+</FrameLayout><!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/app/src/main/res/layout/activity_tab_all.xml -->

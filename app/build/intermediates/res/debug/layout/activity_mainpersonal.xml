@@ -41,11 +41,6 @@
         android:textColor="#000"
         android:textSize="20sp"/>
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/light_gray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,79 +63,86 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/personal_collect_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/background_gray"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/personal_collect_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:src="@drawable/collect_after"/>
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:src="@drawable/collect_after"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="我的收藏"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dcdcdc"/>
+
+        <LinearLayout
+            android:id="@+id/personal_order_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:text="我的收藏"
-            android:textSize="20dp"/>
+            android:orientation="horizontal"
+            android:padding="10dp">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:src="@drawable/dingdan"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="我的订单"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dcdcdc"/>
+
+        <LinearLayout
+            android:id="@+id/personal_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:src="@drawable/person"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:text="个人资料"
+                android:textSize="20sp"/>
+        </LinearLayout>
     </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/personal_order_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/background_gray"
-        android:orientation="horizontal"
-        android:padding="5dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:src="@drawable/dingdan"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:text="我的订单"
-            android:textSize="20sp"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/personal_info_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/background_gray"
-        android:orientation="horizontal"
-        android:padding="5dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:src="@drawable/person"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:text="个人资料"
-            android:textSize="20sp"/>
-    </LinearLayout>
-
 </LinearLayout>
-<!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_mainpersonal.xml -->
+<!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/app/src/main/res/layout/activity_mainpersonal.xml -->

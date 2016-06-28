@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:background="@drawable/background"
+             android:background="@drawable/background1"
              android:padding="10dp">
 
     <FrameLayout
@@ -35,14 +35,14 @@
             <!--android:textSize="20sp"/>-->
             <!--</FrameLayout>-->
 
-            <ImageView
+           <!-- <ImageView
                 android:id="@+id/login_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/sign"
-                />
+                />-->
         </LinearLayout>
     </FrameLayout>
 
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:text="忘记密码"
-                android:textColor="#dcdcdc"
+                android:textColor="#000"
                 android:textSize="20sp"/>
 
             <TextView
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="手机快速登录"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="20sp"/>
         </FrameLayout>
 
@@ -139,8 +139,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:text="新用户？点这里"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:textSize="20sp"/>
 
 </FrameLayout>
-<!-- From: file:/F:/AndroidStudioProject/dianping/app/src/main/res/layout/activity_login.xml -->
+<!-- From: file:/D:/俊/安卓开发/项目开发/Weenjoy-master/app/src/main/res/layout/activity_login.xml -->
